@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="en" data-lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Musaad Alshaye — Marketing Specialist in Saudi Arabia. Digital marketing, brand management and marketing strategy.">
+<meta property="og:title" content="Musaad Alshaye — Marketing Portfolio">
+<meta property="og:description" content="Digital marketing, brand management and marketing strategy.">
+<meta property="og:image" content="work/me.jpg">
+<style>[hidden]{display:none!important} img{max-width:100%} :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Musaad Alshaye Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<script>
+  (function () {
+    var l = 'en';
+    try { l = localStorage.getItem('pf-lang') || 'en'; } catch (e) {}
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.lang = l;
+    document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+  })();
+</script>
+<style>
+  /* Layout: full-bleed bands that alternate white and black, one idea per band, centered display type,
+     large rounded tiles, translucent nav. Black & white only; the page commits to this one look in any theme. */
+  :root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --ink: #1D1D1F;        /* primary text on white */
+    --gray: #6E6E73;       /* secondary text on white */
+    --tile: #F5F5F7;       /* tile on white */
+    --tile-dark: #161617;  /* tile on black */
+    --gray-dark: #A1A1A6;  /* secondary text on black */
+    --line: #D2D2D7;
+    --line-dark: #333336;
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Arabic", "IBM Plex Sans Arabic", "Segoe UI", Roboto, sans-serif;
+    --wrap: 980px;
+    color-scheme: light;
+  }
+
+  :root:not([data-lang="en"]) .en { display: none !important; }
+  :root[data-lang="en"] .ar { display: none !important; }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 56px; }
+  body {
+    margin: 0; background: var(--white); color: var(--ink);
+    font-family: var(--font); font-size: 17px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: rgba(255,255,255,.8); }
+  h1, h2, h3, p { margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid #0071E3; outline-offset: 3px; border-radius: 6px; }
+  .num { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+
+  /* Every band spans the width; its inner wrapper carries the gutter */
+  .band { padding-block: 112px; }
+  .band.dark { background: var(--black); color: var(--white); }
+  .inner {
+    max-width: var(--wrap); margin-inline: auto;
+    padding-left: max(22px, env(safe-area-inset-left, 0px));
+    padding-right: max(22px, env(safe-area-inset-right, 0px));
+  }
+  @media (max-width: 734px) { .band { padding-block: 72px; } }
+
+  /* Type scale: tight leading + negative tracking as size grows (Latin only; Arabic stays at 0 to keep letters joined) */
+  .display { font-size: clamp(48px, 8.4vw, 96px); font-weight: 700; line-height: 1.05; }
+  .headline { font-size: clamp(36px, 5.6vw, 64px); font-weight: 700; line-height: 1.08; text-wrap: balance; }
+  .title { font-size: clamp(24px, 3vw, 32px); font-weight: 600; line-height: 1.15; }
+  .sub { font-size: clamp(19px, 2.2vw, 24px); font-weight: 500; line-height: 1.4; color: var(--gray); text-wrap: balance; }
+  .dark .sub { color: var(--gray-dark); }
+  :root[data-lang="en"] .display { letter-spacing: -0.03em; }
+  :root[data-lang="en"] .headline { letter-spacing: -0.02em; }
+  :root[data-lang="en"] .title { letter-spacing: -0.01em; }
+  :root:not([data-lang="en"]) .display, :root:not([data-lang="en"]) .headline { line-height: 1.3; }
+  .center { text-align: center; }
+  .eyebrow { font-size: 19px; font-weight: 600; color: var(--gray); }
+  .dark .eyebrow { color: var(--gray-dark); }
+
+  /* Nav: translucent material, content scrolls beneath */
+  .nav {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+    background: rgba(255,255,255,.8);
+    backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  }
+  .nav .inner { height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .nav .brand { font-weight: 600; font-size: 16px; }
+  .nav .links { display: flex; gap: 28px; font-size: 13px; color: var(--ink); opacity: .85; }
+  .nav .links a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+  .lang {
+    font: 500 13px var(--font); color: var(--ink); background: transparent;
+    border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; cursor: pointer;
+    transition: transform 100ms ease-out, background-color 150ms ease;
+  }
+  .lang:hover { background: var(--tile); }
+  .lang:active { transform: scale(.96); }
+  @media (max-width: 734px) { .nav .links { display: none; } }
+  @media (prefers-reduced-transparency: reduce) { .nav { background: #fff; backdrop-filter: none; -webkit-backdrop-filter: none; } }
+
+  /* Buttons: pill + text link with chevron. Feedback on press. */
+  .actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px 32px; margin-top: 36px; }
+  .pill {
+    display: inline-block; padding: 12px 24px; border-radius: 999px; font-size: 17px; font-weight: 500;
+    background: var(--ink); color: var(--white);
+    transition: transform 100ms ease-out, background-color 150ms ease;
+  }
+  .pill:hover { background: #000; }
+  .pill:active { transform: scale(.97); }
+  .dark .pill { background: var(--white); color: var(--black); }
+  .more { font-size: 17px; font-weight: 500; color: var(--ink); }
+  .dark .more { color: var(--white); }
+  .more::after { content: " ›"; }
+  .more:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  /* Hero */
+  .hero { padding-block: 120px 96px; }
+  .hero .display { margin-block: 12px 20px; }
+  .avatar { display: block; width: 168px; height: 168px; margin: 0 auto 28px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); box-shadow: 0 20px 40px -24px rgba(0,0,0,.35); }
+  .hero > .inner > *:nth-child(5) { animation-delay: .24s; }
+  @media (max-width: 734px) { .avatar { width: 128px; height: 128px; margin-bottom: 20px; } }
+  .hero { padding-top: 88px; }
+  .hero .sub { max-width: 30em; margin-inline: auto; }
+  .hero > .inner > * { animation: rise .9s cubic-bezier(.22,1,.36,1) both; }
+  .hero > .inner > *:nth-child(2) { animation-delay: .06s; }
+  .hero > .inner > *:nth-child(3) { animation-delay: .12s; }
+  .hero > .inner > *:nth-child(4) { animation-delay: .18s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 734px) { .hero { padding-block: 80px 64px; } }
+
+  /* Numbers band */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 24px; margin-top: 72px; }
+  .stat { text-align: center; }
+  .stat .big { display: block; font-size: clamp(56px, 8vw, 88px); font-weight: 700; line-height: 1; }
+  :root[data-lang="en"] .stat .big { letter-spacing: -0.03em; }
+  .stat .cap { display: block; margin-top: 14px; color: var(--gray-dark); font-size: 17px; line-height: 1.4; max-width: 15em; margin-inline: auto; }
+  @media (max-width: 734px) { .stats { grid-template-columns: 1fr; margin-top: 48px; } }
+
+  /* Tiles */
+  .section-head { text-align: center; margin-bottom: 56px; }
+  .section-head .sub { margin-top: 14px; max-width: 32em; margin-inline: auto; }
+  .tiles { display: grid; gap: 20px; }
+  .tile { background: var(--tile); border-radius: 28px; padding: 48px; min-width: 0; }
+  .dark .tile { background: var(--tile-dark); }
+  @media (max-width: 734px) { .tile { padding: 32px 24px; border-radius: 22px; } }
+
+  .role-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px 24px; flex-wrap: wrap; }
+  .role-top > div { min-width: 0; }
+  .role .org { margin-top: 6px; font-size: 19px; color: var(--gray); }
+  .when { font-size: 15px; color: var(--gray); white-space: nowrap; }
+  .badge { display: inline-block; margin-inline-start: 8px; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--ink); color: var(--white); }
+  .lists { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 36px; }
+  .lists > div { min-width: 0; }
+  .lists h3 { font-size: 15px; font-weight: 600; color: var(--gray); margin-bottom: 12px; }
+  .lists ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  .lists li { font-size: 17px; line-height: 1.5; padding-inline-start: 18px; position: relative; }
+  .lists li::before { content: ""; position: absolute; inset-inline-start: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); }
+  @media (max-width: 734px) { .lists { grid-template-columns: 1fr; gap: 28px; } }
+
+  /* Work: vertical video beside its brief */
+  .work { display: grid; grid-template-columns: minmax(0, 340px) 1fr; gap: 56px; align-items: center; padding: 40px; }
+  .work > * { min-width: 0; }
+  .phone { position: relative; width: 100%; max-width: 340px; aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: var(--black); margin-inline: auto; }
+  .phone video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .work .tag { font-size: 15px; color: var(--gray); }
+  .work .title { margin-top: 8px; }
+  .brief-list { display: grid; gap: 24px; margin-top: 32px; }
+  .brief-list h4 { margin: 0 0 6px; font-size: 15px; font-weight: 600; color: var(--gray); }
+  .brief-list p { font-size: 17px; line-height: 1.55; }
+  .work.wide { grid-template-columns: 1fr; gap: 36px; align-items: start; }
+  .screen { width: 100%; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: var(--black); }
+  .screen video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .work.wide .brief-list { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  @media (max-width: 820px) { .work.wide .brief-list { grid-template-columns: 1fr; gap: 24px; } }
+  .work.flip { grid-template-columns: 1fr minmax(0, 340px); }
+  .work.flip .phone { order: 2; }
+  .script { margin-top: 28px; padding: 20px 24px; border-radius: 18px; background: var(--white); display: grid; gap: 4px; font-size: 17px; }
+  .script b { font-weight: 600; }
+  .script span.q { color: var(--gray); }
+  @media (max-width: 820px) { .work.flip { grid-template-columns: 1fr; } .work.flip .phone { order: 0; } }
+  .browser { border-radius: 14px; overflow: hidden; background: var(--white); border: 1px solid var(--line); box-shadow: 0 24px 48px -28px rgba(0,0,0,.35); }
+  .browser .bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+  .browser .bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+  .browser .bar span { margin-inline-start: 10px; font-size: 12px; color: var(--gray); direction: ltr; }
+  .browser img, .phones img { display: block; width: 100%; height: auto; }
+  .phones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .phones figure { margin: 0; min-width: 0; }
+  .phones img { aspect-ratio: 393 / 852; object-fit: cover; border-radius: 22px; border: 1px solid var(--line); }
+  .phones figcaption { margin-top: 10px; font-size: 14px; color: var(--gray); text-align: center; }
+  @media (max-width: 734px) { .phones { grid-template-columns: 1fr 1fr; } }
+  .project-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 32px; flex-wrap: wrap; }
+  .project-head > div { min-width: 0; max-width: 40em; }
+  .project-head .lead { margin-top: 12px; font-size: 19px; line-height: 1.5; color: var(--gray); }
+  .posters-wrap { display: grid; gap: 16px; }
+  .posters-title { font-size: 15px; font-weight: 600; color: var(--gray); }
+  .posters { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .posters img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 16px; }
+  @media (max-width: 734px) { .posters { grid-template-columns: repeat(2, 1fr); } }
+  #experience .tile { background: var(--white); }
+  @media (max-width: 820px) { .work { grid-template-columns: 1fr; gap: 32px; padding: 24px; } }
+
+  /* Landing: two doors */
+  .hero { padding-bottom: 64px; }
+  .doors-band { padding-top: 0; }
+  .doors { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .door {
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;
+    min-width: 0; overflow: hidden; border-radius: 28px; padding: 56px 40px 0;
+    background: var(--tile); color: var(--ink);
+    transition: transform 160ms ease-out;
+  }
+  .door.dark { background: var(--black); color: var(--white); }
+  .door.dark .eyebrow, .door.dark .sub { color: var(--gray-dark); }
+  .door.dark .more { color: var(--white); }
+  .door .headline { font-size: clamp(32px, 4vw, 48px); }
+  .door .sub { font-size: 19px; max-width: 22em; }
+  .door .more { margin-top: 4px; }
+  .door:hover .more { text-decoration: underline; text-underline-offset: 4px; }
+  .door:active { transform: scale(.985); }
+  .thumbs { margin-top: auto; padding-top: 32px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; width: 100%; }
+  .thumbs img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 14px 14px 0 0; display: block; }
+  .mini-stats { margin-top: auto; padding-block: 32px 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; width: 100%; }
+  .mini-stats b { display: block; font-size: clamp(36px, 4.4vw, 52px); font-weight: 700; line-height: 1.1; }
+  .mini-stats small { display: block; color: var(--gray); font-size: 14px; margin-top: 4px; }
+  @media (max-width: 820px) { .doors { grid-template-columns: 1fr; } .door { padding: 44px 24px 0; } }
+  .nav .links a[aria-current="page"] { opacity: 1; font-weight: 600; }
+
+  /* Intro stage: name behind the photo, revealed on scroll (--p goes 0 → 1) */
+  .stage { --p: 0; position: relative; height: 185svh; }
+  .stage-sticky { position: sticky; top: calc(48px + env(safe-area-inset-top, 0px)); height: calc(100svh - 48px - env(safe-area-inset-top, 0px)); overflow: hidden; }
+  .stage-name {
+    position: absolute; inset-inline: 0; top: 5%; z-index: 1; margin: 0; text-align: center;
+    font-size: min(26vw, 21svh); font-weight: 800; line-height: .98; color: var(--ink);
+    transform: scale(calc(.92 + .08 * var(--p))); transform-origin: 50% 0;
+  }
+  :root[data-lang="en"] .stage-name { letter-spacing: -0.045em; line-height: .9; }
+  .stage-photo {
+    position: absolute; bottom: -5%; left: 50%; z-index: 2; height: 68%; width: auto; max-width: none;
+    transform: translate3d(-50%, calc(var(--p) * 80%), 0);
+    opacity: calc(1 - max(0, var(--p) - .45) * 1.8);
+    will-change: transform, opacity;
+  }
+  @media (max-width: 734px) { .stage-photo { height: 65%; bottom: 0; } .stage-name { top: 12%; } }
+  .hero { padding-block: 72px 64px; }
+  @media (prefers-reduced-motion: reduce) {
+    .stage { height: auto; }
+    .stage-sticky { position: relative; top: 0; height: auto; display: flex; flex-direction: column; align-items: center; padding-top: 40px; }
+    .stage-name { position: static; transform: none; }
+    .stage-photo { position: static; transform: none; opacity: 1; height: auto; width: min(560px, 100%); max-width: 100%; margin-top: 24px; }
+  }
+
+  /* Nav flyouts (Apple-style dropdown) */
+  .navbtn { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+  .navbtn:hover, .navbtn[aria-expanded="true"] { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+  .nav .links [aria-current="page"] { opacity: 1; font-weight: 600; }
+  .flyout {
+    position: absolute; inset-inline: 0; top: 100%; z-index: 30;
+    background: rgba(255,255,255,.96); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 1px 0 rgba(0,0,0,.06);
+    opacity: 0; visibility: hidden; transform: translateY(-6px);
+    transition: opacity 200ms ease-out, transform 240ms cubic-bezier(.22,1,.36,1), visibility 0s linear 240ms;
+  }
+  .flyout[data-open="true"] { opacity: 1; visibility: visible; transform: none; transition: opacity 200ms ease-out, transform 240ms cubic-bezier(.22,1,.36,1); }
+  .nav .fly-inner { height: auto; padding-block: 28px 44px; display: grid; gap: 10px; justify-items: start; align-items: start; }
+  .fly-label { font-size: 13px; color: var(--gray); margin-bottom: 6px; }
+  .fly-big { font-size: 26px; font-weight: 600; line-height: 1.25; color: var(--ink); }
+  a.fly-big:hover { text-decoration: underline; text-underline-offset: 5px; }
+  .fly-li { display: inline-flex; align-items: center; gap: 12px; }
+  .fly-li svg { flex: none; border-radius: 4px; }
+  .fly-small { font-size: 15px; color: var(--gray); margin-top: 8px; }
+  .fly-small:hover { color: var(--ink); }
+  .fly-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; }
+  .fly-val { font-size: 15px; color: var(--gray); direction: ltr; unicode-bidi: isolate; user-select: all; overflow-wrap: anywhere; }
+  .flyout .copy { background: var(--tile); color: var(--ink); padding: 4px 12px; font-size: 13px; align-self: center; }
+  .scrim { position: fixed; inset: 0; z-index: 15; background: rgba(0,0,0,.12); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); opacity: 0; visibility: hidden; transition: opacity 200ms ease, visibility 0s linear 200ms; }
+  .scrim[data-open="true"] { opacity: 1; visibility: visible; transition: opacity 200ms ease; }
+  @media (max-width: 734px) {
+    .nav .links { display: flex !important; gap: 16px; font-size: 14px; }
+    .nav .brand { font-size: 14px; }
+    .fly-big { font-size: 24px; }
+  }
+  @media (max-width: 380px) { .nav .brand { display: none; } }
+
+  /* Chapter nav for work pages */
+  .chapters { background: var(--white); border-bottom: 1px solid var(--line); }
+  .chapters .inner { display: flex; justify-content: center; gap: 40px; padding-block: 18px 0; }
+  .chapters a { display: grid; justify-items: center; gap: 8px; padding-bottom: 14px; font-size: 13px; color: var(--gray); border-bottom: 2px solid transparent; }
+  .chapters a img { width: 56px; height: 56px; object-fit: cover; border-radius: 14px; border: 1px solid var(--line); transition: transform 160ms ease-out; }
+  .chapters a:hover { color: var(--ink); }
+  .chapters a:hover img { transform: translateY(-2px); }
+  .chapters a[aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom-color: var(--ink); }
+  .thumbs.four { grid-template-columns: repeat(4, 1fr); }
+  .thumbs.three { grid-template-columns: repeat(3, 1fr); }
+  .door .thumbs img[src*="kn-"] { aspect-ratio: 3 / 4; object-position: top; }
+
+  /* Education band (dark) */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid2 > * { min-width: 0; }
+  .edu .kicker { font-size: 15px; color: var(--gray-dark); }
+  .edu h3 { margin-top: 10px; }
+  .edu p { margin-top: 8px; color: var(--gray-dark); font-size: 17px; }
+  .rows { display: grid; }
+  .rows .r { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-block: 18px; border-top: 1px solid var(--line-dark); }
+  .rows .r:first-child { border-top: 0; padding-top: 0; }
+  .rows .r > div { min-width: 0; }
+  .rows strong { display: block; font-size: 17px; font-weight: 600; }
+  .rows small { display: block; color: var(--gray-dark); font-size: 15px; margin-top: 2px; }
+  .rows .num { color: var(--gray-dark); font-size: 15px; white-space: nowrap; }
+  .tile .tile-title { font-size: 21px; font-weight: 600; margin-bottom: 24px; }
+  @media (max-width: 734px) { .grid2 { grid-template-columns: 1fr; } }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .skills .tile { padding: 40px; }
+  .skills h3 { font-size: 24px; font-weight: 600; margin-bottom: 20px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+  .chips li { font-size: 15px; padding: 6px 14px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); }
+  .langs { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 48px; margin-top: 56px; text-align: center; }
+  .langs strong { display: block; font-size: 24px; font-weight: 600; }
+  .langs span { color: var(--gray); font-size: 15px; }
+  @media (max-width: 734px) { .skills { grid-template-columns: 1fr; } .skills .tile { padding: 32px 24px; } }
+
+  /* Contact */
+  .contact .actions { flex-direction: column; gap: 14px; }
+  .copyrow {
+    display: inline-flex; align-items: center; gap: 14px; max-width: 100%;
+    padding: 8px 8px 8px 22px; border-radius: 999px; border: 1px solid var(--line-dark);
+  }
+  :root:not([data-lang="en"]) .copyrow { padding: 8px 22px 8px 8px; }
+  .copyrow .val { font-size: 19px; direction: ltr; overflow-wrap: anywhere; user-select: all; }
+  .copy {
+    flex: none; font: 500 14px var(--font); padding: 8px 16px; border-radius: 999px; border: 0; cursor: pointer;
+    background: var(--white); color: var(--black); transition: transform 100ms ease-out;
+  }
+  .copy:active { transform: scale(.95); }
+
+  footer { background: var(--tile); color: var(--gray); font-size: 12px; padding-block: 20px; }
+  footer .inner { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero > .inner > * { animation: none; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+
+<nav class="nav" aria-label="Main">
+  <div class="inner">
+    <a class="brand" href="#home"><span class="ar">مساعد الشايع</span><span class="en">Musaad Alshaye</span></a>
+    <div class="links">
+      <button class="navbtn" type="button" data-menu="work" data-nav="work" aria-expanded="false" aria-controls="menu-work"><span class="ar">أعمالي</span><span class="en">Work</span></button>
+      <button class="navbtn" type="button" data-menu="about" data-nav="about" aria-expanded="false" aria-controls="menu-about"><span class="ar">سيرتي</span><span class="en">About</span></button>
+      <button class="navbtn" type="button" data-menu="contact" aria-expanded="false" aria-controls="menu-contact"><span class="ar">تواصل</span><span class="en">Contact</span></button>
+    </div>
+    <button class="lang" id="lang-toggle" type="button" aria-label="Switch language"><span class="ar">English</span><span class="en">عربي</span></button>
+  </div>
+  <div class="flyout" id="menu-work" data-open="false">
+    <div class="inner fly-inner">
+      <p class="fly-label"><span class="ar">أعمالي</span><span class="en">Work</span></p>
+      <a class="fly-big" href="#videos"><span class="ar">المقاطع</span><span class="en">Videos</span></a>
+      <a class="fly-big" href="#khalnelab"><span class="ar">خل نلعب</span><span class="en">Khal Nelab</span></a>
+      <a class="fly-small" href="#work"><span class="ar">كل الأعمال</span><span class="en">All work</span></a>
+    </div>
+  </div>
+  <div class="flyout" id="menu-about" data-open="false">
+    <div class="inner fly-inner">
+      <p class="fly-label"><span class="ar">سيرتي</span><span class="en">About</span></p>
+      <a class="fly-big" href="#experience"><span class="ar">الخبرات</span><span class="en">Experience</span></a>
+      <a class="fly-big" href="#education"><span class="ar">التعليم</span><span class="en">Education</span></a>
+      <a class="fly-big" href="#skills"><span class="ar">المهارات</span><span class="en">Skills</span></a>
+      <a class="fly-small" href="#about"><span class="ar">السيرة كاملة</span><span class="en">Full profile</span></a>
+    </div>
+  </div>
+  <div class="flyout" id="menu-contact" data-open="false">
+    <div class="inner fly-inner">
+      <p class="fly-label"><span class="ar">تواصل</span><span class="en">Contact</span></p>
+      <div class="fly-row"><span class="fly-big"><span class="ar">الإيميل</span><span class="en">Email</span></span><span class="fly-val" id="fly-email">msaadalshayea@icloud.com</span><button class="copy" type="button" data-copy="fly-email"><span class="ar">نسخ</span><span class="en">Copy</span></button></div>
+      <div class="fly-row"><a class="fly-big fly-li" href="https://www.linkedin.com/in/musaad-alshaye" target="_blank" rel="noopener" aria-label="LinkedIn: Musaad Alshaye"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span dir="ltr">Musaad Alshaye</span></a></div>
+      <div class="fly-row"><span class="fly-big"><span class="ar">الجوال</span><span class="en">Phone</span></span><span class="fly-val num" id="fly-phone">+966 566 726 010</span><button class="copy" type="button" data-copy="fly-phone"><span class="ar">نسخ</span><span class="en">Copy</span></button></div>
+    </div>
+  </div>
+</nav>
+<div class="scrim" data-open="false"></div>
+
+<main id="top">
+<div class="view" data-view="home">
+  <section class="stage" aria-label="Intro">
+    <div class="stage-sticky">
+      <h1 class="stage-name"><span class="ar">مساعد<br>الشايع.</span><span class="en">Musaad<br>Alshaye.</span></h1>
+      <img class="stage-photo" src="work/me-cut.webp" alt="Musaad Alshaye" width="768" height="640">
+    </div>
+  </section>
+
+  <section class="band hero center">
+    <div class="inner">
+      <p class="eyebrow"><span class="ar">مختص تسويق</span><span class="en">Marketing Specialist</span></p>
+      <p class="sub">
+        <span class="ar">تسويق رقمي، وإدارة علامات تجارية، واستراتيجية مبنية على البيانات. والعميل دائماً في المركز.</span>
+        <span class="en">Digital marketing, brand management and data‑driven strategy. With the customer always at the center.</span>
+      </p>
+      <div class="actions">
+        <a class="pill" href="#contact"><span class="ar">تواصل معي</span><span class="en">Get in touch</span></a>
+        <a class="more" href="https://www.linkedin.com/in/musaad-alshaye" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band doors-band">
+    <div class="inner">
+      <div class="doors">
+        <a class="door dark" href="#work">
+          <span class="eyebrow"><span class="ar">أعمالي</span><span class="en">Work</span></span>
+          <h2 class="headline"><span class="ar">محتوى يبيع.</span><span class="en">Content that sells.</span></h2>
+          <p class="sub"><span class="ar">مشروع خل نلعب، و4 مقاطع: إعلانات، وموشن جرافيك، وسكيتشات داخل المتجر.</span><span class="en">The Khal Nelab project, plus 4 videos: ads, motion graphics and in‑store sketches.</span></p>
+          <span class="more"><span class="ar">شوف الأعمال</span><span class="en">See the work</span></span>
+          <span class="thumbs" aria-hidden="true">
+            <img src="work/kn-home.jpg" alt=""><img src="work/bnpl.jpg" alt=""><img src="work/installments.jpg" alt=""><img src="work/tamara.jpg" alt=""><img src="work/tash.jpg" alt="">
+          </span>
+        </a>
+        <a class="door" href="#about">
+          <span class="eyebrow"><span class="ar">سيرتي</span><span class="en">About</span></span>
+          <h2 class="headline"><span class="ar">الخبرة والتعليم.</span><span class="en">Experience &amp; education.</span></h2>
+          <p class="sub"><span class="ar">من مكتبة جرير إلى Apple iPro، مع بكالوريوس التسويق والشهادات والمهارات.</span><span class="en">From Jarir Bookstore to Apple iPro, plus a bachelor's in marketing, certificates and skills.</span></p>
+          <span class="more"><span class="ar">شوف السيرة</span><span class="en">See my story</span></span>
+          <span class="mini-stats">
+            <span><b class="num">2022</b><small><span class="ar">مكتبة جرير</span><span class="en">Jarir Bookstore</span></small></span>
+            <span><b class="num">2024</b><small>Apple iPro</small></span>
+            <span><b class="num">2026</b><small><span class="ar">بكالوريوس التسويق</span><span class="en">Marketing degree</span></small></span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="view" data-view="work" hidden>
+  <section class="band">
+    <div class="inner">
+      <div class="section-head">
+        <h2 class="headline"><span class="ar">أعمالي.</span><span class="en">Work.</span></h2>
+        <p class="sub"><span class="ar">وش تحب تشوف؟</span><span class="en">What would you like to see?</span></p>
+      </div>
+      <div class="doors">
+        <a class="door dark" href="#videos">
+          <span class="eyebrow"><span class="ar">4 مقاطع</span><span class="en">4 videos</span></span>
+          <h2 class="headline"><span class="ar">المقاطع.</span><span class="en">Videos.</span></h2>
+          <p class="sub"><span class="ar">إعلانات، وموشن جرافيك، وسكيتشات داخل المتجر.</span><span class="en">Ads, motion graphics and in‑store sketches.</span></p>
+          <span class="more"><span class="ar">شوف المقاطع</span><span class="en">Watch the videos</span></span>
+          <span class="thumbs four" aria-hidden="true"><img src="work/bnpl.jpg" alt=""><img src="work/installments.jpg" alt=""><img src="work/tamara.jpg" alt=""><img src="work/tash.jpg" alt=""></span>
+        </a>
+        <a class="door" href="#khalnelab">
+          <span class="eyebrow"><span class="ar">مشروعي الخاص</span><span class="en">My own project</span></span>
+          <h2 class="headline"><span class="ar">خل نلعب.</span><span class="en">Khal Nelab.</span></h2>
+          <p class="sub"><span class="ar">منصة ألعاب جماعية: الفكرة والواجهات والبوسترات والأسئلة.</span><span class="en">A party game platform: the idea, UI, posters and questions.</span></p>
+          <span class="more"><span class="ar">شوف المشروع</span><span class="en">See the project</span></span>
+          <span class="thumbs three" aria-hidden="true"><img src="work/kn-home.jpg" alt=""><img src="work/kn-quick.jpg" alt=""><img src="work/kn-wheel.jpg" alt=""></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="view" data-view="videos" hidden>
+  <nav class="chapters" aria-label="Work">
+    <div class="inner">
+      <a href="#videos" aria-current="page"><img src="work/bnpl.jpg" alt=""><span><span class="ar">المقاطع</span><span class="en">Videos</span></span></a>
+      <a href="#khalnelab"><img src="work/kn-home.jpg" alt=""><span><span class="ar">خل نلعب</span><span class="en">Khal Nelab</span></span></a>
+    </div>
+  </nav>
+  <section class="band">
+    <div class="inner">
+      <div class="section-head">
+        <h2 class="headline"><span class="ar">المقاطع.</span><span class="en">Videos.</span></h2>
+        <p class="sub"><span class="ar">محتوى قصير يحوّل فكرة تسويقية إلى موقف يعيشه العميل.</span><span class="en">Short‑form content that turns a marketing idea into a moment the customer lives.</span></p>
+      </div>
+      <div class="tiles">
+        <article class="tile work">
+          <div class="phone">
+            <video id="vid-bnpl" src="work/bnpl.mp4" poster="work/bnpl.jpg" controls playsinline preload="metadata"></video>
+          </div>
+          <div>
+            <p class="tag"><span class="ar">فيديو قصير · داخل المتجر</span><span class="en">Short‑form video · In‑store</span></p>
+            <h3 class="title"><span class="ar">اشترِ الآن وادفع لاحقاً</span><span class="en">Buy Now, Pay Later</span></h3>
+            <div class="brief-list">
+              <div>
+                <h4><span class="ar">الهدف</span><span class="en">Goal</span></h4>
+                <p><span class="ar">إظهار كيف تزيل خيارات الدفع المرنة عائق التكلفة المقدّمة، وتشجّع العملاء على الشراء بثقة أكبر.</span><span class="en">Show how flexible payment options remove the barrier of upfront cost and encourage customers to purchase more confidently.</span></p>
+              </div>
+              <div>
+                <h4><span class="ar">الفكرة</span><span class="en">Idea</span></h4>
+                <p><span class="ar">موقف بسيط داخل المتجر: عميل متردد يشتري جوال بسبب الميزانية، ثم يرتاح تدريجياً لما يتعرّف على الدفع المرن، وتمتد الفكرة للإكسسوارات بعد.</span><span class="en">A simple in‑store interaction where a customer hesitates to buy a phone due to budget, then gradually becomes more comfortable once flexible payment is introduced, extending the idea to accessories as well.</span></p>
+              </div>
+              <div>
+                <h4><span class="ar">التنفيذ</span><span class="en">Execution</span></h4>
+                <p><span class="ar">فيديو سريع الإيقاع بلقطات متتابعة بين العميل والمنتج والموظف، يحاكي تجربة حقيقية داخل المتجر.</span><span class="en">A fast‑paced video using quick camera cuts between the customer, product and employee to simulate a real in‑store experience.</span></p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile work wide">
+          <div class="screen">
+            <video id="vid-installments" src="work/installments.mp4" poster="work/installments.jpg" controls playsinline preload="metadata"></video>
+          </div>
+          <div>
+            <p class="tag"><span class="ar">موشن جرافيك · قصة مصوّرة بخط اليد + أدوات ذكاء اصطناعي</span><span class="en">Motion graphics · Hand‑drawn storyboard + AI tools</span></p>
+            <h3 class="title"><span class="ar">«يعني شي يتقسط»</span><span class="en">“If it plugs in, it's on installments”</span></h3>
+            <div class="brief-list">
+              <div>
+                <h4><span class="ar">الهدف</span><span class="en">Goal</span></h4>
+                <p><span class="ar">رفع وعي العملاء بأن المتجر يقدّم أكثر من الجوالات، وأنهم يقدرون يشترون مجموعة واسعة من الأجهزة الإلكترونية بخيارات تقسيط مرنة.</span><span class="en">Increase customer awareness that the store offers more than smartphones, and that a wide range of electronic devices can be bought with flexible installment options.</span></p>
+              </div>
+              <div>
+                <h4><span class="ar">الفكرة</span><span class="en">Idea</span></h4>
+                <p><span class="ar">كسر الصورة السائدة بأن المتجر يركّز على الجوالات، بإظهار أن أي جهاز إلكتروني تقريباً يحتاجه العميل يقدر يشتريه ويقسّطه من المتجر.</span><span class="en">Challenge the perception that the store is mainly about smartphones by showing that almost any electronic device customers need can be bought and financed there.</span></p>
+              </div>
+              <div>
+                <h4><span class="ar">التنفيذ</span><span class="en">Execution</span></h4>
+                <p><span class="ar">كتبت الفكرة الأولية ورسمت القصة المصوّرة بخط اليد لتحديد المشاهد والتسلسل والاتجاه البصري. ثم استخدمتها مرجعاً لتوجيه أدوات الذكاء الاصطناعي في إنتاج الموشن جرافيك، وعدّلت النتيجة حتى تطابق الرسالة المقصودة.</span><span class="en">Wrote the initial concept and drew a hand‑drawn storyboard to define the scenes, flow and visual direction. Then used it as a visual reference to guide AI tools in producing the motion graphics, and refined the output to match the intended message.</span></p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile work wide">
+          <div class="screen">
+            <video id="vid-tamara" src="work/tamara.mp4" poster="work/tamara.jpg" controls playsinline preload="metadata"></video>
+          </div>
+          <div>
+            <p class="tag"><span class="ar">فيديو قصير · تقسيط مع تمارا</span><span class="en">Short‑form video · Installments with Tamara</span></p>
+            <h3 class="title"><span class="ar">«مو بس 4 شهور»</span><span class="en">“Not just 4 months”</span></h3>
+            <div class="brief-list">
+              <div>
+                <h4><span class="ar">الهدف</span><span class="en">Goal</span></h4>
+                <p><span class="ar">إبراز الضغط المالي اللي تسببه خطط التقسيط القصيرة، وتقديم الخطط الممتدة حتى 12 شهر كحل أكثر مرونة.</span><span class="en">Highlight how short‑term installment options create financial pressure, and position extended plans of up to 12 months as a more flexible solution.</span></p>
+              </div>
+              <div>
+                <h4><span class="ar">الفكرة</span><span class="en">Idea</span></h4>
+                <p><span class="ar">عرض توتر العميل الحقيقي مع فترات التقسيط المحدودة، ثم الانتقال إلى خيار دفع مريح ومرن أكثر.</span><span class="en">Show real customer stress with limited installment periods, then shift to a more comfortable and flexible payment option.</span></p>
+              </div>
+              <div>
+                <h4><span class="ar">التنفيذ</span><span class="en">Execution</span></h4>
+                <p><span class="ar">فيديو سريع الإيقاع بمشاهد قصيرة وردود فعل مألوفة تعكس إحباط العميل من خطط الأربعة شهور، يتبعها انتقال واضح إلى الخيارات الممتدة حتى 12 شهر، مع التركيز على السهولة والمرونة.</span><span class="en">A fast‑paced video of short scenes and relatable reactions reflecting customer frustration with 4‑month plans, followed by a clear transition to extended options of up to 12 months, emphasising ease and flexibility.</span></p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile work flip">
+          <div class="phone">
+            <video id="vid-tash" src="work/tash.mp4" poster="work/tash.jpg" controls playsinline preload="metadata"></video>
+          </div>
+          <div>
+            <p class="tag"><span class="ar">سكيتش داخل المتجر · محاكاة لمشهد من «طاش ما طاش»</span><span class="en">In‑store sketch · A nod to a classic “Tash Ma Tash” scene</span></p>
+            <h3 class="title"><span class="ar">«اجل كم؟ هممم»</span><span class="en">“So how much? Hmmm”</span></h3>
+            <div class="brief-list">
+              <div>
+                <h4><span class="ar">الفكرة</span><span class="en">Idea</span></h4>
+                <p><span class="ar">إعادة تمثيل مشهد المساومة الشهير «اجل كم… هممم» من طاش ما طاش داخل المتجر، والعميل يسأل عن القسط وكل مرة ينزل المبلغ أكثر.</span><span class="en">Recreate the famous “so how much… hmmm” haggling scene from Tash Ma Tash inside the store, with the monthly installment dropping every time the customer asks again.</span></p>
+              </div>
+              <div>
+                <h4><span class="ar">التنفيذ</span><span class="en">Execution</span></h4>
+                <p><span class="ar">سكيتش بلقطة عمودية ثابتة داخل المحل، يعتمد على مرجع يعرفه الجمهور السعودي عشان يوصل رسالة الأقساط المنخفضة بطريقة خفيفة تنحفظ.</span><span class="en">A single vertical shot filmed in the store, built on a reference Saudi audiences instantly recognise, to land the low‑installment message in a light, memorable way.</span></p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="view" data-view="khalnelab" hidden>
+  <nav class="chapters" aria-label="Work">
+    <div class="inner">
+      <a href="#videos"><img src="work/bnpl.jpg" alt=""><span><span class="ar">المقاطع</span><span class="en">Videos</span></span></a>
+      <a href="#khalnelab" aria-current="page"><img src="work/kn-home.jpg" alt=""><span><span class="ar">خل نلعب</span><span class="en">Khal Nelab</span></span></a>
+    </div>
+  </nav>
+  <section class="band">
+    <div class="inner">
+      <div class="tiles">
+        <article class="tile work wide">
+          <div class="project-head">
+            <div>
+              <p class="tag"><span class="ar">مشروعي الخاص · منصة ألعاب جماعية</span><span class="en">My own project · Party game platform</span></p>
+              <h3 class="title"><span class="ar">خل نلعب</span><span class="en">Khal Nelab</span></h3>
+              <p class="lead"><span class="ar">منصة ألعاب للجلسات: فريقين على جهاز واحد، عشر ألعاب، وفريق واحد يفوز. صاحب الجلسة يدير الجولات ويحكم.</span><span class="en">Party games for get‑togethers: two teams on one device, ten games, one winning team. The host runs the rounds and keeps score.</span></p>
+              <p class="lead" style="color:var(--ink)"><span class="ar">أنا صاحب المشروع: الفكرة، ورسم واجهات المستخدم، وتصميم بوسترات الألعاب، وكتابة الأسئلة والمحتوى. والبرمجة نفّذتها بالذكاء الاصطناعي (Claude) على أساس رسوماتي.</span><span class="en">I own the project: the idea, the UI sketches, the game posters, and all the questions and content. The code was built with AI (Claude) from my sketches.</span></p>
+            </div>
+            <a class="pill" href="https://khalnelab.com" target="_blank" rel="noopener"><span class="ar">زور الموقع</span><span class="en">Visit the site</span></a>
+          </div>
+          <div class="browser">
+            <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>khalnelab.com</span></div>
+            <img src="work/kn-desktop.jpg" alt="Khal Nelab home page on desktop" loading="lazy">
+          </div>
+          <div class="phones">
+            <figure><img src="work/kn-home.jpg" alt="Home page on a phone" loading="lazy"><figcaption><span class="ar">الرئيسية</span><span class="en">Home</span></figcaption></figure>
+            <figure><img src="work/kn-quick.jpg" alt="Game list" loading="lazy"><figcaption><span class="ar">اختيار اللعبة</span><span class="en">Pick a game</span></figcaption></figure>
+            <figure><img src="work/kn-wheel.jpg" alt="Spin and guess game" loading="lazy"><figcaption><span class="ar">لف وخمن</span><span class="en">Spin &amp; guess</span></figcaption></figure>
+            <figure><img src="work/kn-car.jpg" alt="Guess the car game" loading="lazy"><figcaption><span class="ar">عينك عالموتر</span><span class="en">Name that car</span></figcaption></figure>
+          </div>
+          <div class="posters-wrap">
+            <p class="posters-title"><span class="ar">بوسترات الألعاب العشر · تصميمي</span><span class="en">The ten game posters · my design</span></p>
+            <div class="posters">
+              <img src="work/poster-logogame.jpg" alt="Guess the logo" loading="lazy">
+              <img src="work/poster-cargame.jpg" alt="Name that car" loading="lazy">
+              <img src="work/poster-whogame.jpg" alt="Who is it?" loading="lazy">
+              <img src="work/poster-clubgame.jpg" alt="Guess the club" loading="lazy">
+              <img src="work/poster-countries.jpg" alt="Guess the flag" loading="lazy">
+              <img src="work/poster-categoriesgame.jpg" alt="Categories" loading="lazy">
+              <img src="work/poster-wordgame.jpg" alt="Guess the word" loading="lazy">
+              <img src="work/poster-wheelgame.jpg" alt="Spin &amp; guess" loading="lazy">
+              <img src="work/poster-proverbgame.jpg" alt="Guess the proverb" loading="lazy">
+              <img src="work/poster-quizgame.jpg" alt="Quiz" loading="lazy">
+            </div>
+          </div>
+          <div class="brief-list">
+            <div>
+              <h4><span class="ar">الفكرة</span><span class="en">Idea</span></h4>
+              <p><span class="ar">«جمعتكم ناقصها تحدي»: ألعاب عربية سريعة تحوّل أي جلسة إلى منافسة بين فريقين، بدون تطبيق ولا تسجيل.</span><span class="en">“Your get‑together needs a challenge”: quick Arabic games that turn any gathering into a two‑team contest, with no app and no sign‑up.</span></p>
+            </div>
+            <div>
+              <h4><span class="ar">التجربة</span><span class="en">Experience</span></h4>
+              <p><span class="ar">طريقتين للعب: «تحدي الجلسة» يجمع النقاط عبر عدة ألعاب، و«لعبة سريعة» تختار فيها لعبة وحدة وتبدأ على طول.</span><span class="en">Two ways to play: “Session challenge” adds up points across several games, and “Quick game” lets you pick one game and start right away.</span></p>
+            </div>
+            <div>
+              <h4><span class="ar">المحتوى</span><span class="en">Content</span></h4>
+              <p><span class="ar">عشر ألعاب من ثقافتنا: خمن الكلمة، لف وخمن، عينك عالموتر، وش ناديك؟، خمن المثل، وغيرها.</span><span class="en">Ten games rooted in local culture: guess the word, spin &amp; guess, name that car, guess the club, guess the proverb and more.</span></p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="view" data-view="about" hidden>
+  <section class="band" id="experience" style="background:var(--tile)">
+    <div class="inner">
+      <div class="section-head">
+        <h2 class="headline"><span class="ar">الخبرات.</span><span class="en">Experience.</span></h2>
+        <p class="sub"><span class="ar">من البيع الاستشاري إلى تسويق علامة عالمية.</span><span class="en">From consultative selling to marketing a global brand.</span></p>
+      </div>
+      <div class="tiles">
+        <article class="tile role">
+          <div class="role-top">
+            <div>
+              <h3 class="title"><span class="ar">مختص تسويق</span><span class="en">Marketing Specialist</span></h3>
+              <p class="org">Connect Service – Apple iPro Project</p>
+            </div>
+            <span class="when"><span class="num">May 2024 –</span> <span class="ar">الآن</span><span class="en">Present</span><span class="badge"><span class="ar">حالياً</span><span class="en">Now</span></span></span>
+          </div>
+          <div class="lists">
+            <div>
+              <h3><span class="ar">أبرز الإنجازات</span><span class="en">Key achievements</span></h3>
+              <ul>
+                <li><span class="ar">رفعت حضور العلامة التجارية عبر مبادرات تسويقية وحملات ترويجية موجّهة.</span><span class="en">Increased brand visibility through targeted marketing initiatives and promotional campaigns.</span></li>
+                <li><span class="ar">درّبت وأهّلت أكثر من ١٢ موظفاً جديداً على منتجات Apple ومعايير تجربة العميل.</span><span class="en">Trained and onboarded 12+ new employees on Apple products and customer experience standards.</span></li>
+                <li><span class="ar">دعمت نمو المبيعات بعروض منتجات تفاعلية ورؤى من السوق.</span><span class="en">Supported sales growth with engaging product demonstrations and market insights.</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3><span class="ar">المهام الرئيسية</span><span class="en">Core responsibilities</span></h3>
+              <ul>
+                <li><span class="ar">تمثيل Apple والتنسيق مع إدارة المتجر لضمان معايير العلامة.</span><span class="en">Represent Apple and coordinate with store management to uphold brand standards.</span></li>
+                <li><span class="ar">تطوير حملات ترويجية، وصناعة محتوى قصير، وتحليل أسعار المنافسين واتجاهات السوق.</span><span class="en">Develop promotional campaigns, create short‑form content, and analyse competitor pricing and market trends.</span></li>
+                <li><span class="ar">مراجعة تقارير المبيعات ومؤشرات الأداء أسبوعياً، وتقديم عروض منتجات بالعربي والإنجليزي.</span><span class="en">Review weekly sales reports and KPIs, and deliver product demos in Arabic and English.</span></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile role">
+          <div class="role-top">
+            <div>
+              <h3 class="title"><span class="ar">مستشار مبيعات، الحاسبات والإلكترونيات</span><span class="en">Sales Associate, Computers &amp; Electronics</span></h3>
+              <p class="org"><span class="ar">مكتبة جرير</span><span class="en">Jarir Bookstore</span></p>
+            </div>
+            <span class="when num">Oct 2022 – May 2024</span>
+          </div>
+          <div class="lists">
+            <div>
+              <h3><span class="ar">أبرز الإنجازات</span><span class="en">Key achievements</span></h3>
+              <ul>
+                <li><span class="ar">تجاوزت أهداف المبيعات الفردية بأسلوب البيع الاستشاري.</span><span class="en">Exceeded individual sales targets through consultative selling.</span></li>
+                <li><span class="ar">رفعت متوسط قيمة الفاتورة بترشيح منتجات مكمّلة وترقيات مناسبة.</span><span class="en">Increased average transaction value with complementary products and upgrades.</span></li>
+                <li><span class="ar">حافظت على رضا عملاء عالٍ بإرشاد احترافي للمنتجات.</span><span class="en">Maintained high customer satisfaction through professional product guidance.</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3><span class="ar">المهام الرئيسية</span><span class="en">Core responsibilities</span></h3>
+              <ul>
+                <li><span class="ar">مساعدة العملاء في اختيار الأجهزة والإكسسوارات حسب احتياجهم وميزانيتهم.</span><span class="en">Helped customers choose computers, tablets, phones and accessories for their needs and budget.</span></li>
+                <li><span class="ar">ترشيح المنتجات والترقيات التي ترفع قيمة الشراء.</span><span class="en">Recommended products and upgrades that maximised customer value.</span></li>
+                <li><span class="ar">حل استفسارات وشكاوى العملاء وبناء علاقات طويلة الأمد.</span><span class="en">Resolved inquiries and complaints while building long‑term relationships.</span></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark" id="education">
+    <div class="inner">
+      <div class="section-head">
+        <h2 class="headline"><span class="ar">التعليم.</span><span class="en">Education.</span></h2>
+        <p class="sub"><span class="ar">دبلوم ثم بكالوريوس في التسويق، وشهادات في التسويق الرقمي والتحليلات.</span><span class="en">A diploma, then a bachelor's in marketing. Plus certificates in digital marketing and analytics.</span></p>
+      </div>
+      <div class="grid2">
+        <div class="tile edu">
+          <p class="kicker num">2023 – 2026</p>
+          <h3 class="title"><span class="ar">بكالوريوس التسويق</span><span class="en">Bachelor's in Marketing</span></h3>
+          <p><span class="ar">الجامعة العربية المفتوحة</span><span class="en">Arab Open University</span></p>
+        </div>
+        <div class="tile edu">
+          <p class="kicker num">2019 – 2022</p>
+          <h3 class="title"><span class="ar">دبلوم التسويق</span><span class="en">Diploma in Marketing</span></h3>
+          <p><span class="ar">الكلية التقنية بالرياض</span><span class="en">Riyadh College of Technology</span></p>
+        </div>
+        <div class="tile">
+          <p class="tile-title"><span class="ar">الشهادات والاختبارات</span><span class="en">Certificates &amp; tests</span></p>
+          <div class="rows">
+            <div class="r"><div><strong>Kanz AI Training Hackathon</strong><small><span class="ar">شهادة مشاركة · كنز</span><span class="en">Participation certificate · Kanz</span></small></div><span class="num">Jul 2026</span></div>
+            <div class="r"><div><strong>Google Analytics for Beginners (GA4)</strong><small>Coursera</small></div><span class="num">May 2026</span></div>
+            <div class="r"><div><strong>Fundamentals of Digital Marketing</strong><small>Google</small></div><span class="num">Apr 2026</span></div>
+            <div class="r"><div><strong><span class="ar">اختبار STEP · الدرجة 81</span><span class="en">STEP English · score 81</span></strong><small><span class="ar">الاختبار التحصيلي للغة الإنجليزية</span><span class="en">Standardized Test of English Proficiency</span></small></div><span class="num">May 2023</span></div>
+          </div>
+        </div>
+        <div class="tile">
+          <p class="tile-title"><span class="ar">الجوائز</span><span class="en">Honors &amp; awards</span></p>
+          <div class="rows">
+            <div class="r"><div><strong><span class="ar">التميز في خدمة العملاء</span><span class="en">Customer Service Excellence</span></strong><small>Connect Marketing Services</small></div><span class="num">Nov 2024</span></div>
+            <div class="r"><div><strong><span class="ar">موظف الشهر</span><span class="en">Employee of the Month</span></strong><small><span class="ar">مكتبة جرير</span><span class="en">Jarir Bookstore</span></small></div><span class="num">May 2023</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="skills">
+    <div class="inner">
+      <div class="section-head">
+        <h2 class="headline"><span class="ar">المهارات.</span><span class="en">Skills.</span></h2>
+        <p class="sub"><span class="ar">التسويق والبيانات والعميل، في مكان واحد.</span><span class="en">Marketing, data and the customer, in one place.</span></p>
+      </div>
+      <div class="skills">
+        <div class="tile"><h3><span class="ar">التسويق وإدارة العلامة</span><span class="en">Marketing &amp; brand</span></h3>
+          <ul class="chips"><li><span class="ar">تسويق العلامة التجارية</span><span class="en">Brand marketing</span></li><li><span class="ar">تخطيط الحملات</span><span class="en">Campaign planning</span></li><li><span class="ar">أبحاث السوق</span><span class="en">Market research</span></li><li><span class="ar">تحليل المنافسين</span><span class="en">Competitor analysis</span></li></ul></div>
+        <div class="tile"><h3><span class="ar">التسويق الرقمي والتحليلات</span><span class="en">Digital &amp; analytics</span></h3>
+          <ul class="chips"><li><span class="ar">صناعة المحتوى</span><span class="en">Content creation</span></li><li>Google Analytics</li><li><span class="ar">متابعة مؤشرات الأداء</span><span class="en">KPI tracking</span></li><li><span class="ar">التقارير التسويقية</span><span class="en">Marketing reporting</span></li></ul></div>
+        <div class="tile"><h3><span class="ar">المبيعات والعملاء</span><span class="en">Sales &amp; customers</span></h3>
+          <ul class="chips"><li><span class="ar">علاقات العملاء</span><span class="en">Customer relations</span></li><li><span class="ar">عرض المنتجات</span><span class="en">Product demos</span></li><li><span class="ar">البيع الاستشاري</span><span class="en">Consultative selling</span></li><li><span class="ar">حل الشكاوى</span><span class="en">Complaint resolution</span></li></ul></div>
+        <div class="tile"><h3><span class="ar">الأدوات</span><span class="en">Tools</span></h3>
+          <ul class="chips"><li>Excel</li><li>PowerPoint</li><li><span class="ar">تحليل البيانات</span><span class="en">Data analysis</span></li><li><span class="ar">العمل الجماعي</span><span class="en">Team collaboration</span></li></ul></div>
+      </div>
+      <div class="langs">
+        <div><strong><span class="ar">العربية</span><span class="en">Arabic</span></strong><span><span class="ar">اللغة الأم</span><span class="en">Native</span></span></div>
+        <div><strong><span class="ar">الإنجليزية</span><span class="en">English</span></strong><span><span class="ar">فوق المتوسط</span><span class="en">Upper‑intermediate</span></span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+  <section class="band dark center contact" id="contact">
+    <div class="inner">
+      <h2 class="display"><span class="ar">خلنا نتكلم.</span><span class="en">Let's talk.</span></h2>
+      <p class="sub" style="margin-top:20px"><span class="ar">متاح لفرص في التسويق الرقمي وإدارة العلامات التجارية.</span><span class="en">Open to roles in digital marketing and brand management.</span></p>
+      <div class="actions">
+        <div class="copyrow"><span class="val" id="email">msaadalshayea@icloud.com</span><button class="copy" type="button" data-copy="email"><span class="ar">نسخ</span><span class="en">Copy</span></button></div>
+        <div class="copyrow"><span class="val num" id="phone">+966 566 726 010</span><button class="copy" type="button" data-copy="phone"><span class="ar">نسخ</span><span class="en">Copy</span></button></div>
+        <a class="pill" style="margin-top:12px" href="https://www.linkedin.com/in/musaad-alshaye" target="_blank" rel="noopener"><span class="ar">حسابي في LinkedIn</span><span class="en">View my LinkedIn</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span><span class="ar">© 2026 مساعد الشايع</span><span class="en">© 2026 Musaad Alshaye</span></span>
+    <span><span class="ar">المملكة العربية السعودية</span><span class="en">Saudi Arabia</span></span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var stage = document.querySelector('.stage');
+    var ticking = false;
+    function stageUpdate() {
+      ticking = false;
+      if (!stage || stage.offsetParent === null) return;
+      var sticky = stage.firstElementChild;
+      var total = stage.offsetHeight - sticky.offsetHeight;
+      var p = total > 0 ? Math.min(1, Math.max(0, -stage.getBoundingClientRect().top / total)) : 0;
+      stage.style.setProperty('--p', p.toFixed(4));
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(stageUpdate); } }, { passive: true });
+    window.addEventListener('resize', stageUpdate);
+    // Flyout menus: hover on devices that hover, tap everywhere
+    var scrim = document.querySelector('.scrim');
+    var openId = null, closeTimer = null;
+    function setMenu(id) {
+      clearTimeout(closeTimer);
+      openId = id;
+      document.querySelectorAll('.flyout').forEach(function (f) { f.setAttribute('data-open', f.id === 'menu-' + id ? 'true' : 'false'); });
+      document.querySelectorAll('.navbtn').forEach(function (b) { b.setAttribute('aria-expanded', b.getAttribute('data-menu') === id ? 'true' : 'false'); });
+      scrim.setAttribute('data-open', id ? 'true' : 'false');
+    }
+    var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    document.querySelectorAll('.navbtn').forEach(function (b) {
+      var id = b.getAttribute('data-menu');
+      var hoveredAt = 0;
+      b.addEventListener('click', function () { if (openId === id && Date.now() - hoveredAt < 400) return; setMenu(openId === id ? null : id); });
+      if (canHover) b.addEventListener('mouseenter', function () { hoveredAt = Date.now(); setMenu(id); });
+    });
+    var navEl = document.querySelector('.nav');
+    if (canHover) {
+      navEl.addEventListener('mouseleave', function () { closeTimer = setTimeout(function () { setMenu(null); }, 180); });
+      navEl.addEventListener('mouseenter', function () { clearTimeout(closeTimer); });
+      document.querySelectorAll('.nav .links a, .nav .brand, .lang').forEach(function (a) { a.addEventListener('mouseenter', function () { setMenu(null); }); });
+    }
+    scrim.addEventListener('click', function () { setMenu(null); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(null); });
+    document.querySelectorAll('.flyout a').forEach(function (a) { a.addEventListener('click', function () { setMenu(null); }); });
+    window.addEventListener('hashchange', function () { setMenu(null); });
+
+    var views = { home: 1, work: 1, videos: 1, khalnelab: 1, about: 1 };
+    var navGroup = { work: 'work', videos: 'work', khalnelab: 'work', about: 'about' };
+    function show(name) {
+      document.querySelectorAll('.view').forEach(function (v) {
+        var on = v.getAttribute('data-view') === name;
+        v.hidden = !on;
+        if (!on) v.querySelectorAll('video').forEach(function (vd) { try { vd.pause(); } catch (e) {} });
+      });
+      document.querySelectorAll('[data-nav]').forEach(function (a) {
+        if (a.getAttribute('data-nav') === navGroup[name]) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+      });
+    }
+    function route() {
+      var h = decodeURIComponent(location.hash.slice(1));
+      if (views[h]) { show(h); window.scrollTo({ top: 0, behavior: 'instant' }); stageUpdate(); return; }
+      var el = h && document.getElementById(h);
+      if (el) {
+        var v = el.closest('.view');
+        if (v) show(v.getAttribute('data-view'));
+        requestAnimationFrame(function () { el.scrollIntoView({ behavior: 'instant' }); });
+        return;
+      }
+      show('home'); window.scrollTo({ top: 0, behavior: 'instant' }); stageUpdate();
+    }
+    window.addEventListener('hashchange', route);
+    route();
+    var root = document.documentElement;
+    document.getElementById('lang-toggle').addEventListener('click', function () {
+      var next = root.getAttribute('data-lang') === 'ar' ? 'en' : 'ar';
+      root.setAttribute('data-lang', next);
+      root.lang = next;
+      root.dir = next === 'ar' ? 'rtl' : 'ltr';
+      try { localStorage.setItem('pf-lang', next); } catch (e) {}
+    });
+    document.querySelectorAll('.copy').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var el = document.getElementById(btn.getAttribute('data-copy'));
+        var text = el.textContent.trim();
+        var ar = btn.querySelector('.ar'), en = btn.querySelector('.en');
+        var done = function () {
+          ar.textContent = 'تم النسخ'; en.textContent = 'Copied';
+          setTimeout(function () { ar.textContent = 'نسخ'; en.textContent = 'Copy'; }, 1600);
+        };
+        var select = function () {
+          var r = document.createRange(); r.selectNodeContents(el);
+          var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        };
+        try { navigator.clipboard.writeText(text).then(done, select); } catch (e) { select(); }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
