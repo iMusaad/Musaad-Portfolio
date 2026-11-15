@@ -258,14 +258,21 @@
   .navbtn { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
   .navbtn:hover, .navbtn[aria-expanded="true"] { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
   .nav .links [aria-current="page"] { opacity: 1; font-weight: 600; }
+  /* Dropdown: the panel unrolls from the nav, then its links drop in one after another */
   .flyout {
     position: absolute; inset-inline: 0; top: 100%; z-index: 30;
-    background: rgba(255,255,255,.96); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
-    box-shadow: 0 1px 0 rgba(0,0,0,.06);
-    opacity: 0; visibility: hidden; transform: translateY(-6px);
-    transition: opacity 200ms ease-out, transform 240ms cubic-bezier(.22,1,.36,1), visibility 0s linear 240ms;
+    background: rgba(255,255,255,.97); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 24px 40px -32px rgba(0,0,0,.35);
+    clip-path: inset(0 0 100% 0); visibility: hidden;
+    transition: clip-path 320ms cubic-bezier(.4,0,.2,1), visibility 0s linear 320ms;
   }
-  .flyout[data-open="true"] { opacity: 1; visibility: visible; transform: none; transition: opacity 200ms ease-out, transform 240ms cubic-bezier(.22,1,.36,1); }
+  .flyout[data-open="true"] { clip-path: inset(0 0 -40px 0); visibility: visible; transition: clip-path 520ms cubic-bezier(.22,1,.36,1); }
+  .flyout .fly-inner > * { opacity: 0; transform: translateY(-10px); transition: opacity 160ms ease, transform 160ms ease; }
+  .flyout[data-open="true"] .fly-inner > * {
+    opacity: 1; transform: none;
+    transition: opacity 420ms ease-out, transform 520ms cubic-bezier(.22,1,.36,1);
+    transition-delay: calc(120ms + var(--i, 0) * 55ms);
+  }
   .nav .fly-inner { height: auto; padding-block: 28px 44px; display: grid; gap: 10px; justify-items: start; align-items: start; }
   .fly-label { font-size: 13px; color: var(--gray); margin-bottom: 6px; }
   .fly-big { font-size: 26px; font-weight: 600; line-height: 1.25; color: var(--ink); }
@@ -346,6 +353,28 @@
     html { scroll-behavior: auto; }
     .hero > .inner > * { animation: none; }
     * { transition: none !important; }
+  }
+
+  /* Page switch: the new page rises in */
+  .view.entering { animation: viewIn 620ms cubic-bezier(.22,1,.36,1) both; }
+  @keyframes viewIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+  /* Scroll reveal: added only by script, so without it everything stays visible */
+  .js-reveal .reveal { opacity: 0; transform: translateY(40px) scale(.985); transition: opacity 700ms ease-out, transform 900ms cubic-bezier(.22,1,.36,1); transition-delay: calc(var(--d, 0) * 90ms); }
+  .js-reveal .reveal.in { opacity: 1; transform: none; }
+  .js-reveal .hero .inner > * { animation: none; }
+  .door { transition: transform 300ms cubic-bezier(.22,1,.36,1), box-shadow 300ms ease; }
+  .door:hover { transform: translateY(-4px); box-shadow: 0 30px 50px -36px rgba(0,0,0,.45); }
+  .door .thumbs img { transition: transform 500ms cubic-bezier(.22,1,.36,1); }
+  .door:hover .thumbs img { transform: translateY(-8px); }
+  .door:hover .thumbs img:nth-child(2) { transition-delay: 40ms; }
+  .door:hover .thumbs img:nth-child(3) { transition-delay: 80ms; }
+  .door:hover .thumbs img:nth-child(4) { transition-delay: 120ms; }
+  .door:hover .thumbs img:nth-child(5) { transition-delay: 160ms; }
+  @media (prefers-reduced-motion: reduce) {
+    .view.entering { animation: none; }
+    .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
+    .flyout, .flyout[data-open="true"], .flyout .fly-inner > * { transition: none !important; transform: none; }
   }
 </style>
 </head>
@@ -838,7 +867,9 @@
     function show(name) {
       document.querySelectorAll('.view').forEach(function (v) {
         var on = v.getAttribute('data-view') === name;
+        var was = v.hidden;
         v.hidden = !on;
+        if (on && was) { v.classList.remove('entering'); void v.offsetWidth; v.classList.add('entering'); }
         if (!on) v.querySelectorAll('video').forEach(function (vd) { try { vd.pause(); } catch (e) {} });
       });
       document.querySelectorAll('[data-nav]').forEach(function (a) {
@@ -886,5 +917,26 @@
   })();
 </script>
 
+<script>
+  (function () {
+    // stagger index for dropdown items
+    document.querySelectorAll('.fly-inner').forEach(function (f) {
+      Array.prototype.forEach.call(f.children, function (c, i) { c.style.setProperty('--i', i); });
+    });
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    var sel = '.section-head, .tiles > .tile, .doors > .door, .phones figure, .posters img, .browser, .brief-list > div, .skills > .tile, .grid2 > .tile, .langs > div, .hero .inner > *, .contact .inner > *';
+    var els = document.querySelectorAll(sel);
+    els.forEach(function (el) {
+      el.classList.add('reveal');
+      var sib = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+      el.style.setProperty('--d', Math.min(sib, 6));
+    });
+    document.documentElement.classList.add('js-reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
 </body>
 </html>
