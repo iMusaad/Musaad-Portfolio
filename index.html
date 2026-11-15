@@ -13,7 +13,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300..700&display=swap">
 <script>
   (function () {
     var l = 'en';
@@ -36,7 +36,8 @@
     --gray-dark: #A1A1A6;  /* secondary text on black */
     --line: #D2D2D7;
     --line-dark: #333336;
-    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Arabic", "IBM Plex Sans Arabic", "Segoe UI", Roboto, sans-serif;
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    --font-ar: "Readex Pro", "SF Arabic", "Geeza Pro", Tahoma, sans-serif;
     --wrap: 980px;
     color-scheme: light;
   }
@@ -361,8 +362,31 @@
   @keyframes viewIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 
   /* Scroll reveal: added only by script, so without it everything stays visible */
-  .js-reveal .reveal { opacity: 0; transform: translateY(40px) scale(.985); transition: opacity 700ms ease-out, transform 900ms cubic-bezier(.22,1,.36,1); transition-delay: calc(var(--d, 0) * 90ms); }
-  .js-reveal .reveal.in { opacity: 1; transform: none; }
+  .ar, .lang .en, .bt-big:first-child { font-family: var(--font-ar); }
+  :root:not([data-lang="en"]) .stage-name { font-weight: 700; line-height: 1.08; }
+
+  /* Scroll reveal, both directions: things rise in from below when scrolling down,
+     drop in from above when scrolling back up, and leave the same way */
+  .js-reveal .reveal {
+    opacity: 0; transform: translate3d(0, 48px, 0) scale(.97);
+    transition: opacity 360ms ease-in, transform 420ms ease-in;
+  }
+  .js-reveal .reveal.above { transform: translate3d(0, -48px, 0) scale(.97); }
+  .js-reveal .reveal.in {
+    opacity: 1; transform: none;
+    transition: opacity 800ms ease-out, transform 1000ms cubic-bezier(.22,1,.36,1);
+    transition-delay: calc(var(--d, 0) * 80ms);
+  }
+  .js-reveal .reveal.in.settled { transition-delay: 0s; }
+  /* Bento: each tile flies in from its own side and the grid assembles */
+  .js-reveal .bento > .reveal { transform: translate3d(var(--tx, 0), var(--ty, 90px), 0) scale(.86); }
+  .js-reveal .bento > .reveal.above { transform: translate3d(var(--tx, 0), calc(var(--ty, 90px) * -1), 0) scale(.86); }
+  .js-reveal .bento > .reveal.in { transform: none; transition: opacity 900ms ease-out, transform 1200ms cubic-bezier(.16,1,.3,1); transition-delay: calc(var(--d, 0) * 70ms); }
+  .js-reveal .bento > .reveal.in.settled { transition: transform 400ms cubic-bezier(.22,1,.36,1), background-color 300ms ease; }
+  .bt-kn { --tx: -120px; --ty: 40px; } .bt-vid { --tx: 0px; --ty: 160px; }
+  .bt-ipro, .bt-jarir, .bt-lang { --tx: 120px; --ty: 40px; }
+  .bt-ai, .bt-tools { --tx: -120px; --ty: 60px; } .bt-degree { --tx: 0px; --ty: 140px; } .bt-certs { --tx: 120px; --ty: 60px; }
+  @media (max-width: 600px) { .bento > .bt { --tx: 0px; --ty: 70px; } }
   .js-reveal .hero .inner > * { animation: none; }
   .door { transition: transform 300ms cubic-bezier(.22,1,.36,1), box-shadow 300ms ease; }
   .door:hover { transform: translateY(-4px); box-shadow: 0 30px 50px -36px rgba(0,0,0,.45); }
@@ -395,7 +419,7 @@
     padding: 26px; border-radius: 24px; background: var(--tile-dark); color: var(--white);
     transition: transform 400ms cubic-bezier(.22,1,.36,1), background-color 300ms ease;
   }
-  .bt:hover, .js-reveal .bt.reveal.in:hover { transform: scale(1.015); background: #1d1d1f; }
+  .bt:hover, .js-reveal .bento > .bt.reveal.in.settled:hover { transform: scale(1.015); background: #1d1d1f; }
   .bt:active { transform: scale(.99); }
   .bt-kn { grid-area: kn; justify-content: flex-start; padding: 36px; }
   .bt-vid { grid-area: vid; padding: 0; }
@@ -590,25 +614,25 @@
         <p class="sub"><span class="ar">محتوى قصير يحوّل فكرة تسويقية إلى موقف يعيشه العميل.</span><span class="en">Short‑form content that turns a marketing idea into a moment the customer lives.</span></p>
       </div>
       <div class="tiles">
-        <article class="tile work">
-          <div class="phone">
-            <video id="vid-bnpl" src="work/bnpl.mp4" poster="work/bnpl.jpg" controls playsinline preload="metadata"></video>
+        <article class="tile work wide">
+          <div class="screen">
+            <video id="vid-tamara" src="work/tamara.mp4" poster="work/tamara.jpg" controls playsinline preload="metadata"></video>
           </div>
           <div>
-            <p class="tag"><span class="ar">فيديو قصير · داخل المتجر</span><span class="en">Short‑form video · In‑store</span></p>
-            <h3 class="title"><span class="ar">اشترِ الآن وادفع لاحقاً</span><span class="en">Buy Now, Pay Later</span></h3>
+            <p class="tag"><span class="ar">فيديو قصير · تقسيط مع تمارا</span><span class="en">Short‑form video · Installments with Tamara</span></p>
+            <h3 class="title"><span class="ar">«مو بس 4 شهور»</span><span class="en">“Not just 4 months”</span></h3>
             <div class="brief-list">
               <div>
                 <h4><span class="ar">الهدف</span><span class="en">Goal</span></h4>
-                <p><span class="ar">إظهار كيف تزيل خيارات الدفع المرنة عائق التكلفة المقدّمة، وتشجّع العملاء على الشراء بثقة أكبر.</span><span class="en">Show how flexible payment options remove the barrier of upfront cost and encourage customers to purchase more confidently.</span></p>
+                <p><span class="ar">إبراز الضغط المالي اللي تسببه خطط التقسيط القصيرة، وتقديم الخطط الممتدة حتى 12 شهر كحل أكثر مرونة.</span><span class="en">Highlight how short‑term installment options create financial pressure, and position extended plans of up to 12 months as a more flexible solution.</span></p>
               </div>
               <div>
                 <h4><span class="ar">الفكرة</span><span class="en">Idea</span></h4>
-                <p><span class="ar">موقف بسيط داخل المتجر: عميل متردد يشتري جوال بسبب الميزانية، ثم يرتاح تدريجياً لما يتعرّف على الدفع المرن، وتمتد الفكرة للإكسسوارات بعد.</span><span class="en">A simple in‑store interaction where a customer hesitates to buy a phone due to budget, then gradually becomes more comfortable once flexible payment is introduced, extending the idea to accessories as well.</span></p>
+                <p><span class="ar">عرض توتر العميل الحقيقي مع فترات التقسيط المحدودة، ثم الانتقال إلى خيار دفع مريح ومرن أكثر.</span><span class="en">Show real customer stress with limited installment periods, then shift to a more comfortable and flexible payment option.</span></p>
               </div>
               <div>
                 <h4><span class="ar">التنفيذ</span><span class="en">Execution</span></h4>
-                <p><span class="ar">فيديو سريع الإيقاع بلقطات متتابعة بين العميل والمنتج والموظف، يحاكي تجربة حقيقية داخل المتجر.</span><span class="en">A fast‑paced video using quick camera cuts between the customer, product and employee to simulate a real in‑store experience.</span></p>
+                <p><span class="ar">فيديو سريع الإيقاع بمشاهد قصيرة وردود فعل مألوفة تعكس إحباط العميل من خطط الأربعة شهور، يتبعها انتقال واضح إلى الخيارات الممتدة حتى 12 شهر، مع التركيز على السهولة والمرونة.</span><span class="en">A fast‑paced video of short scenes and relatable reactions reflecting customer frustration with 4‑month plans, followed by a clear transition to extended options of up to 12 months, emphasising ease and flexibility.</span></p>
               </div>
             </div>
           </div>
@@ -638,25 +662,25 @@
           </div>
         </article>
 
-        <article class="tile work wide">
-          <div class="screen">
-            <video id="vid-tamara" src="work/tamara.mp4" poster="work/tamara.jpg" controls playsinline preload="metadata"></video>
+        <article class="tile work">
+          <div class="phone">
+            <video id="vid-bnpl" src="work/bnpl.mp4" poster="work/bnpl.jpg" controls playsinline preload="metadata"></video>
           </div>
           <div>
-            <p class="tag"><span class="ar">فيديو قصير · تقسيط مع تمارا</span><span class="en">Short‑form video · Installments with Tamara</span></p>
-            <h3 class="title"><span class="ar">«مو بس 4 شهور»</span><span class="en">“Not just 4 months”</span></h3>
+            <p class="tag"><span class="ar">فيديو قصير · داخل المتجر</span><span class="en">Short‑form video · In‑store</span></p>
+            <h3 class="title"><span class="ar">اشترِ الآن وادفع لاحقاً</span><span class="en">Buy Now, Pay Later</span></h3>
             <div class="brief-list">
               <div>
                 <h4><span class="ar">الهدف</span><span class="en">Goal</span></h4>
-                <p><span class="ar">إبراز الضغط المالي اللي تسببه خطط التقسيط القصيرة، وتقديم الخطط الممتدة حتى 12 شهر كحل أكثر مرونة.</span><span class="en">Highlight how short‑term installment options create financial pressure, and position extended plans of up to 12 months as a more flexible solution.</span></p>
+                <p><span class="ar">إظهار كيف تزيل خيارات الدفع المرنة عائق التكلفة المقدّمة، وتشجّع العملاء على الشراء بثقة أكبر.</span><span class="en">Show how flexible payment options remove the barrier of upfront cost and encourage customers to purchase more confidently.</span></p>
               </div>
               <div>
                 <h4><span class="ar">الفكرة</span><span class="en">Idea</span></h4>
-                <p><span class="ar">عرض توتر العميل الحقيقي مع فترات التقسيط المحدودة، ثم الانتقال إلى خيار دفع مريح ومرن أكثر.</span><span class="en">Show real customer stress with limited installment periods, then shift to a more comfortable and flexible payment option.</span></p>
+                <p><span class="ar">موقف بسيط داخل المتجر: عميل متردد يشتري جوال بسبب الميزانية، ثم يرتاح تدريجياً لما يتعرّف على الدفع المرن، وتمتد الفكرة للإكسسوارات بعد.</span><span class="en">A simple in‑store interaction where a customer hesitates to buy a phone due to budget, then gradually becomes more comfortable once flexible payment is introduced, extending the idea to accessories as well.</span></p>
               </div>
               <div>
                 <h4><span class="ar">التنفيذ</span><span class="en">Execution</span></h4>
-                <p><span class="ar">فيديو سريع الإيقاع بمشاهد قصيرة وردود فعل مألوفة تعكس إحباط العميل من خطط الأربعة شهور، يتبعها انتقال واضح إلى الخيارات الممتدة حتى 12 شهر، مع التركيز على السهولة والمرونة.</span><span class="en">A fast‑paced video of short scenes and relatable reactions reflecting customer frustration with 4‑month plans, followed by a clear transition to extended options of up to 12 months, emphasising ease and flexibility.</span></p>
+                <p><span class="ar">فيديو سريع الإيقاع بلقطات متتابعة بين العميل والمنتج والموظف، يحاكي تجربة حقيقية داخل المتجر.</span><span class="en">A fast‑paced video using quick camera cuts between the customer, product and employee to simulate a real in‑store experience.</span></p>
               </div>
             </div>
           </div>
@@ -1003,7 +1027,7 @@
       Array.prototype.forEach.call(f.children, function (c, i) { c.style.setProperty('--i', i); });
     });
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
-    var sel = '.bento > .bt, .section-head, .tiles > .tile, .doors > .door, .phones figure, .posters img, .browser, .brief-list > div, .skills > .tile, .grid2 > .tile, .langs > div, .hero .inner > *, .contact .inner > *';
+    var sel = '.bento > .bt, .section-head, .role .lists > div, .rows .r, .chips li, .fly-none, .tiles > .tile, .doors > .door, .phones figure, .posters img, .browser, .brief-list > div, .skills > .tile, .grid2 > .tile, .langs > div, .hero .inner > *, .contact .inner > *';
     var els = document.querySelectorAll(sel);
     els.forEach(function (el) {
       el.classList.add('reveal');
@@ -1012,8 +1036,19 @@
     });
     document.documentElement.classList.add('js-reveal');
     var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { var t = e.target; t.classList.add('in'); io.unobserve(t); setTimeout(function () { t.style.removeProperty('--d'); }, 1400); } });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      entries.forEach(function (e) {
+        var t = e.target;
+        clearTimeout(t._settle);
+        if (e.isIntersecting) {
+          t.classList.remove('above');
+          t.classList.add('in');
+          t._settle = setTimeout(function () { t.classList.add('settled'); }, 1500);
+        } else {
+          t.classList.remove('in', 'settled');
+          t.classList.toggle('above', e.boundingClientRect.top < (e.rootBounds ? e.rootBounds.top : 0));
+        }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
     els.forEach(function (el) { io.observe(el); });
   })();
 </script>
