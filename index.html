@@ -282,6 +282,8 @@
   a.fly-big:hover { text-decoration: underline; text-underline-offset: 5px; }
   .fly-li { display: inline-flex; align-items: center; gap: 12px; }
   .fly-li svg { flex: none; border-radius: 4px; }
+  .fly-sub { display: grid; gap: 0; }
+  .fly-sub small { font-size: 14px; font-weight: 400; color: var(--gray); }
   .fly-small { font-size: 15px; color: var(--gray); margin-top: 8px; }
   .fly-small:hover { color: var(--ink); }
   .fly-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; }
@@ -489,8 +491,8 @@
   <div class="flyout" id="menu-work" data-open="false">
     <div class="inner fly-inner">
       <p class="fly-label"><span class="ar">أعمالي</span><span class="en">Work</span></p>
+      <a class="fly-big fly-sub" href="#khalnelab"><span><span class="ar">خل نلعب</span><span class="en">Khal Nelab</span></span><small><span class="ar">مشروعي الخاص</span><span class="en">My own project</span></small></a>
       <a class="fly-big" href="#videos"><span class="ar">المقاطع</span><span class="en">Videos</span></a>
-      <a class="fly-big" href="#khalnelab"><span class="ar">خل نلعب</span><span class="en">Khal Nelab</span></a>
       <a class="fly-small" href="#work"><span class="ar">كل الأعمال</span><span class="en">All work</span></a>
     </div>
   </div>
@@ -596,19 +598,19 @@
         <p class="sub"><span class="ar">وش تحب تشوف؟</span><span class="en">What would you like to see?</span></p>
       </div>
       <div class="doors">
-        <a class="door dark" href="#videos">
-          <span class="eyebrow"><span class="ar">4 مقاطع</span><span class="en">4 videos</span></span>
-          <h2 class="headline"><span class="ar">المقاطع.</span><span class="en">Videos.</span></h2>
-          <p class="sub"><span class="ar">إعلانات، وموشن جرافيك، وسكيتشات داخل المتجر.</span><span class="en">Ads, motion graphics and in‑store sketches.</span></p>
-          <span class="more"><span class="ar">شوف المقاطع</span><span class="en">Watch the videos</span></span>
-          <span class="thumbs four" aria-hidden="true"><img src="work/bnpl.jpg" alt=""><img src="work/installments.jpg" alt=""><img src="work/tamara.jpg" alt=""><img src="work/tash.jpg" alt=""></span>
-        </a>
-        <a class="door" href="#khalnelab">
+        <a class="door dark" href="#khalnelab">
           <span class="eyebrow"><span class="ar">مشروعي الخاص</span><span class="en">My own project</span></span>
           <h2 class="headline"><span class="ar">خل نلعب.</span><span class="en">Khal Nelab.</span></h2>
           <p class="sub"><span class="ar">منصة ألعاب جماعية: الفكرة والواجهات والبوسترات والأسئلة.</span><span class="en">A party game platform: the idea, UI, posters and questions.</span></p>
           <span class="more"><span class="ar">شوف المشروع</span><span class="en">See the project</span></span>
           <span class="thumbs three" aria-hidden="true"><img src="work/kn-home.jpg" alt=""><img src="work/kn-quick.jpg" alt=""><img src="work/kn-wheel.jpg" alt=""></span>
+        </a>
+        <a class="door" href="#videos">
+          <span class="eyebrow"><span class="ar">4 مقاطع</span><span class="en">4 videos</span></span>
+          <h2 class="headline"><span class="ar">المقاطع.</span><span class="en">Videos.</span></h2>
+          <p class="sub"><span class="ar">إعلانات، وموشن جرافيك، وسكيتشات داخل المتجر.</span><span class="en">Ads, motion graphics and in‑store sketches.</span></p>
+          <span class="more"><span class="ar">شوف المقاطع</span><span class="en">Watch the videos</span></span>
+          <span class="thumbs four" aria-hidden="true"><img src="work/bnpl.jpg" alt=""><img src="work/installments.jpg" alt=""><img src="work/tamara.jpg" alt=""><img src="work/tash.jpg" alt=""></span>
         </a>
       </div>
     </div>
@@ -618,8 +620,8 @@
 <div class="view" data-view="videos" hidden>
   <nav class="chapters" aria-label="Work">
     <div class="inner">
-      <a href="#videos" aria-current="page"><img src="work/bnpl.jpg" alt=""><span><span class="ar">المقاطع</span><span class="en">Videos</span></span></a>
       <a href="#khalnelab"><img src="work/kn-home.jpg" alt=""><span><span class="ar">خل نلعب</span><span class="en">Khal Nelab</span></span></a>
+      <a href="#videos" aria-current="page"><img src="work/bnpl.jpg" alt=""><span><span class="ar">المقاطع</span><span class="en">Videos</span></span></a>
     </div>
   </nav>
   <section class="band">
@@ -728,8 +730,8 @@
 <div class="view" data-view="khalnelab" hidden>
   <nav class="chapters" aria-label="Work">
     <div class="inner">
-      <a href="#videos"><img src="work/bnpl.jpg" alt=""><span><span class="ar">المقاطع</span><span class="en">Videos</span></span></a>
       <a href="#khalnelab" aria-current="page"><img src="work/kn-home.jpg" alt=""><span><span class="ar">خل نلعب</span><span class="en">Khal Nelab</span></span></a>
+      <a href="#videos"><img src="work/bnpl.jpg" alt=""><span><span class="ar">المقاطع</span><span class="en">Videos</span></span></a>
     </div>
   </nav>
   <section class="band">
