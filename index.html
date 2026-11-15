@@ -441,6 +441,9 @@
   .bt-shot img { display: block; width: 100%; height: auto; }
   .bt-kn:hover .bt-shot { transform: translateY(-14px); }
   .bt-vid video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .bt-vid video::-webkit-media-controls, .bt-vid video::-webkit-media-controls-start-playback-button, .bt-vid video::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; }
+  .bt-ai .bt-title { font-size: clamp(30px, 3.2vw, 44px); }
+  .bt-text { unicode-bidi: plaintext; }
   .bt-over { position: absolute; inset: auto 0 0 0; padding: 60px 22px 22px; display: grid; gap: 4px; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
   .bt-more { font-size: 15px; color: var(--white); opacity: .85; }
   .bt-more::after { content: " ›"; }
@@ -1051,6 +1054,19 @@
       });
     }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
     els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+<script>
+  (function () {
+    // Keep the bento video playing silently; Safari needs muted set as a property before play()
+    var v = document.querySelector('.bt-vid video');
+    if (!v) return;
+    v.muted = true; v.defaultMuted = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
+    function tryPlay() { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) tryPlay(); else v.pause(); }); }, { threshold: 0.2 }).observe(v);
+    } else { tryPlay(); }
+    ['touchstart', 'scroll', 'click'].forEach(function (ev) { window.addEventListener(ev, function once() { tryPlay(); window.removeEventListener(ev, once); }, { passive: true }); });
   })();
 </script>
 </body>
