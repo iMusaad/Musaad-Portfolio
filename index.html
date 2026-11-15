@@ -543,6 +543,41 @@
     .kn-bento { grid-template-areas: none; }
     .kn-bento > .kb-shot { min-height: 240px; } .kn-bento > .kb-posters { min-height: 380px; }
   }
+
+  /* Work page bento */
+  .work-bento { grid-auto-rows: 190px;
+    grid-template-areas:
+      "kn kn vids vids"
+      "kn kn v1 v2"
+      "kn kn v3 v4"; }
+  .wb-kn { grid-area: kn; justify-content: flex-start; padding: 40px; }
+  .wb-vids { grid-area: vids; }
+  .wb-v1 { grid-area: v1; } .wb-v2 { grid-area: v2; } .wb-v3 { grid-area: v3; } .wb-v4 { grid-area: v4; }
+  .wb-v { padding: 0; }
+  .wb-v1 .bt-fill { object-position: center 62%; }
+  .wb-v .bt-over { padding: 50px 18px 16px; }
+  .wb-vt { color: #fff; font-weight: 600; font-size: 15px; }
+  .wb-phones { position: absolute; inset-inline: 32px; bottom: -40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: end; }
+  .wb-phones img { width: 100%; aspect-ratio: 393 / 852; object-fit: cover; object-position: top; border-radius: 18px; border: 1px solid var(--line-dark); transition: transform 600ms cubic-bezier(.22,1,.36,1); }
+  .wb-phones img:nth-child(2) { transform: translateY(-28px); }
+  .wb-kn:hover .wb-phones img { transform: translateY(-12px); }
+  .wb-kn:hover .wb-phones img:nth-child(2) { transform: translateY(-40px); }
+
+  .bt-light { background: var(--tile); color: var(--ink); }
+  .bt-light .bt-kicker { color: var(--gray); }
+  .bt-light .bt-more { color: var(--ink); }
+  a.bt-light:hover { background: var(--tile); }
+  .wb-kn { --tx: -120px; --ty: 40px; } .wb-vids { --tx: 120px; --ty: 30px; }
+  .wb-v1, .wb-v3 { --tx: 60px; --ty: 90px; } .wb-v2, .wb-v4 { --tx: 120px; --ty: 90px; }
+  @media (max-width: 1000px) {
+    .work-bento { grid-template-areas: "kn kn" "kn kn" "vids vids" "v1 v2" "v3 v4"; grid-auto-rows: 220px; }
+  }
+  @media (max-width: 600px) {
+    .work-bento { grid-template-columns: 1fr 1fr; grid-auto-rows: 220px; grid-template-areas: "kn kn" "kn kn" "vids vids" "v1 v2" "v3 v4"; }
+    .work-bento > .bt { min-height: 0; }
+    .work-bento > .wb-kn { grid-area: kn; } .work-bento > .wb-vids { grid-area: vids; } .work-bento > .wb-v1 { grid-area: v1; } .work-bento > .wb-v2 { grid-area: v2; } .work-bento > .wb-v3 { grid-area: v3; } .work-bento > .wb-v4 { grid-area: v4; }
+    .wb-kn { padding: 28px; } .wb-phones { inset-inline: 20px; gap: 10px; bottom: -30px; }
+  }
 </style>
 </head>
 <body>
@@ -669,21 +704,23 @@
         <h2 class="headline"><span class="ar">أعمالي.</span><span class="en">Work.</span></h2>
         <p class="sub"><span class="ar">وش تحب تشوف؟</span><span class="en">What would you like to see?</span></p>
       </div>
-      <div class="doors">
-        <a class="door dark" href="#khalnelab">
-          <span class="eyebrow"><span class="ar">مشروعي الخاص</span><span class="en">My own project</span></span>
-          <h2 class="headline"><span class="ar">خل نلعب.</span><span class="en">Khal Nelab.</span></h2>
-          <p class="sub"><span class="ar">منصة ألعاب جماعية: الفكرة والواجهات والبوسترات والأسئلة.</span><span class="en">A party game platform: the idea, UI, posters and questions.</span></p>
-          <span class="more"><span class="ar">شوف المشروع</span><span class="en">See the project</span></span>
-          <span class="thumbs three" aria-hidden="true"><img src="work/kn-home.jpg" alt=""><img src="work/kn-quick.jpg" alt=""><img src="work/kn-wheel.jpg" alt=""></span>
+      <div class="bento work-bento">
+        <a class="bt wb-kn" href="#khalnelab">
+          <span class="bt-kicker"><span class="ar">مشروعي الخاص</span><span class="en">My own project</span></span>
+          <span class="bt-title"><span class="ar">خل نلعب.</span><span class="en">Khal Nelab.</span></span>
+          <span class="bt-text"><span class="ar">منصة ألعاب جماعية: الفكرة والواجهات والبوسترات والأسئلة.</span><span class="en">A party‑game platform. The idea, UI, posters and questions.</span></span>
+          <span class="bt-more"><span class="ar">شوف المشروع</span><span class="en">See the project</span></span>
+          <span class="wb-phones" aria-hidden="true"><img src="work/kn-quick.jpg" alt="" loading="lazy"><img src="work/kn-home.jpg" alt="" loading="lazy"><img src="work/kn-wheel.jpg" alt="" loading="lazy"></span>
         </a>
-        <a class="door" href="#videos">
-          <span class="eyebrow"><span class="ar">4 مقاطع</span><span class="en">4 videos</span></span>
-          <h2 class="headline"><span class="ar">المقاطع.</span><span class="en">Videos.</span></h2>
-          <p class="sub"><span class="ar">إعلانات، وموشن جرافيك، وسكيتشات داخل المتجر.</span><span class="en">Ads, motion graphics and in‑store sketches.</span></p>
-          <span class="more"><span class="ar">شوف المقاطع</span><span class="en">Watch the videos</span></span>
-          <span class="thumbs four" aria-hidden="true"><img src="work/bnpl.jpg" alt=""><img src="work/installments.jpg" alt=""><img src="work/tamara.jpg" alt=""><img src="work/tash.jpg" alt=""></span>
+        <a class="bt bt-light wb-vids" href="#videos">
+          <span class="bt-kicker"><span class="ar">4 مقاطع · كتابة وتصوير ومونتاج</span><span class="en">4 videos · written, filmed &amp; edited</span></span>
+          <span class="bt-title"><span class="ar">المقاطع.</span><span class="en">Videos.</span></span>
+          <span class="bt-more"><span class="ar">شوف الكل</span><span class="en">Watch all</span></span>
         </a>
+        <a class="bt wb-v wb-v1" href="#vid-tamara"><img class="bt-fill" src="work/tamara.jpg" alt="" loading="lazy"><span class="bt-over"><span class="bt-text wb-vt"><span class="ar">«مو بس 4 شهور»</span><span class="en">“Not just 4 months”</span></span></span></a>
+        <a class="bt wb-v wb-v2" href="#vid-installments"><img class="bt-fill" src="work/installments.jpg" alt="" loading="lazy"><span class="bt-over"><span class="bt-text wb-vt"><span class="ar">«يعني شي يتقسط»</span><span class="en">“If it plugs in…”</span></span></span></a>
+        <a class="bt wb-v wb-v3" href="#vid-bnpl"><img class="bt-fill" src="work/bnpl.jpg" alt="" loading="lazy"><span class="bt-over"><span class="bt-text wb-vt"><span class="ar">اشترِ الآن وادفع لاحقاً</span><span class="en">Buy Now, Pay Later</span></span></span></a>
+        <a class="bt wb-v wb-v4" href="#vid-tash"><img class="bt-fill" src="work/tash.jpg" alt="" loading="lazy"><span class="bt-over"><span class="bt-text wb-vt"><span class="ar">«اجل كم؟ هممم»</span><span class="en">“So how much? Hmmm”</span></span></span></a>
       </div>
     </div>
   </section>
