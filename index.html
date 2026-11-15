@@ -308,6 +308,11 @@
   .thumbs.three { grid-template-columns: repeat(3, 1fr); }
   .door .thumbs img[src*="kn-"] { aspect-ratio: 3 / 4; object-position: top; }
 
+  .card .kicker { font-size: 15px; color: var(--gray); }
+  .dark .card .kicker { color: var(--gray-dark); }
+  .card h3 { margin-top: 10px; }
+  .card p { margin-top: 8px; font-size: 17px; color: var(--gray); }
+  .dark .card p { color: var(--gray-dark); }
   /* Education band (dark) */
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .grid2 > * { min-width: 0; }
@@ -489,6 +494,8 @@
       <p class="fly-label"><span class="ar">سيرتي</span><span class="en">About</span></p>
       <a class="fly-big" href="#experience"><span class="ar">الخبرات</span><span class="en">Experience</span></a>
       <a class="fly-big" href="#education"><span class="ar">التعليم</span><span class="en">Education</span></a>
+      <a class="fly-big" href="#certificates"><span class="ar">الشهادات</span><span class="en">Certificates</span></a>
+      <a class="fly-big" href="#awards"><span class="ar">الجوائز</span><span class="en">Awards</span></a>
       <a class="fly-big" href="#skills"><span class="ar">المهارات</span><span class="en">Skills</span></a>
       <a class="fly-small" href="#about"><span class="ar">السيرة كاملة</span><span class="en">Full profile</span></a>
     </div>
@@ -567,7 +574,7 @@
           <span class="bt-kicker"><span class="ar">الأدوات</span><span class="en">Tools</span></span>
           <span class="bt-chips"><span>GA4</span><span>Excel</span><span>PowerPoint</span><span>Claude</span></span>
         </a>
-        <a class="bt bt-certs" href="#education">
+        <a class="bt bt-certs" href="#certificates">
           <span class="bt-kicker"><span class="ar">الشهادات</span><span class="en">Certificates</span></span>
           <span class="bt-list"><span>Fundamentals of Digital Marketing · Google</span><span>Google Analytics (GA4) · Coursera</span><span>Kanz AI Training Hackathon</span></span>
         </a>
@@ -849,34 +856,70 @@
     <div class="inner">
       <div class="section-head">
         <h2 class="headline"><span class="ar">التعليم.</span><span class="en">Education.</span></h2>
-        <p class="sub"><span class="ar">دبلوم ثم بكالوريوس في التسويق، وشهادات في التسويق الرقمي والتحليلات.</span><span class="en">A diploma, then a bachelor's in marketing. Plus certificates in digital marketing and analytics.</span></p>
+        <p class="sub"><span class="ar">دبلوم ثم بكالوريوس في التسويق.</span><span class="en">A diploma, then a bachelor's in marketing.</span></p>
       </div>
       <div class="grid2">
-        <div class="tile edu">
+        <div class="tile card">
           <p class="kicker num">2023 – 2026</p>
           <h3 class="title"><span class="ar">بكالوريوس التسويق</span><span class="en">Bachelor's in Marketing</span></h3>
           <p><span class="ar">الجامعة العربية المفتوحة</span><span class="en">Arab Open University</span></p>
         </div>
-        <div class="tile edu">
+        <div class="tile card">
           <p class="kicker num">2019 – 2022</p>
           <h3 class="title"><span class="ar">دبلوم التسويق</span><span class="en">Diploma in Marketing</span></h3>
           <p><span class="ar">الكلية التقنية بالرياض</span><span class="en">Riyadh College of Technology</span></p>
         </div>
-        <div class="tile">
-          <p class="tile-title"><span class="ar">الشهادات والاختبارات</span><span class="en">Certificates &amp; tests</span></p>
-          <div class="rows">
-            <div class="r"><div><strong>Kanz AI Training Hackathon</strong><small><span class="ar">شهادة مشاركة · كنز</span><span class="en">Participation certificate · Kanz</span></small></div><span class="num">Jul 2026</span></div>
-            <div class="r"><div><strong>Google Analytics for Beginners (GA4)</strong><small>Coursera</small></div><span class="num">May 2026</span></div>
-            <div class="r"><div><strong>Fundamentals of Digital Marketing</strong><small>Google</small></div><span class="num">Apr 2026</span></div>
-            <div class="r"><div><strong><span class="ar">اختبار STEP · الدرجة 81</span><span class="en">STEP English · score 81</span></strong><small><span class="ar">الاختبار التحصيلي للغة الإنجليزية</span><span class="en">Standardized Test of English Proficiency</span></small></div><span class="num">May 2023</span></div>
-          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="certificates">
+    <div class="inner">
+      <div class="section-head">
+        <h2 class="headline"><span class="ar">الشهادات والاختبارات.</span><span class="en">Certificates &amp; tests.</span></h2>
+        <p class="sub"><span class="ar">التسويق الرقمي والتحليلات والذكاء الاصطناعي.</span><span class="en">Digital marketing, analytics and AI.</span></p>
+      </div>
+      <div class="grid2">
+        <div class="tile card">
+          <p class="kicker num">Jul 2026</p>
+          <h3 class="title">Kanz AI Training Hackathon</h3>
+          <p><span class="ar">شهادة مشاركة · كنز</span><span class="en">Certificate of participation · Kanz</span></p>
         </div>
-        <div class="tile">
-          <p class="tile-title"><span class="ar">الجوائز</span><span class="en">Honors &amp; awards</span></p>
-          <div class="rows">
-            <div class="r"><div><strong><span class="ar">التميز في خدمة العملاء</span><span class="en">Customer Service Excellence</span></strong><small>Connect Marketing Services</small></div><span class="num">Nov 2024</span></div>
-            <div class="r"><div><strong><span class="ar">موظف الشهر</span><span class="en">Employee of the Month</span></strong><small><span class="ar">مكتبة جرير</span><span class="en">Jarir Bookstore</span></small></div><span class="num">May 2023</span></div>
-          </div>
+        <div class="tile card">
+          <p class="kicker num">May 2026</p>
+          <h3 class="title">Google Analytics for Beginners (GA4)</h3>
+          <p>Coursera</p>
+        </div>
+        <div class="tile card">
+          <p class="kicker num">Apr 2026</p>
+          <h3 class="title">Fundamentals of Digital Marketing</h3>
+          <p>Google</p>
+        </div>
+        <div class="tile card">
+          <p class="kicker num">May 2023</p>
+          <h3 class="title"><span class="ar">اختبار STEP · الدرجة 81</span><span class="en">STEP English · score 81</span></h3>
+          <p><span class="ar">الاختبار التحصيلي للغة الإنجليزية</span><span class="en">Standardized Test of English Proficiency</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark" id="awards">
+    <div class="inner">
+      <div class="section-head">
+        <h2 class="headline"><span class="ar">الجوائز.</span><span class="en">Honors &amp; awards.</span></h2>
+        <p class="sub"><span class="ar">تقدير على خدمة العملاء والأداء.</span><span class="en">Recognised for customer service and performance.</span></p>
+      </div>
+      <div class="grid2">
+        <div class="tile card">
+          <p class="kicker num">Nov 2024</p>
+          <h3 class="title"><span class="ar">التميز في خدمة العملاء</span><span class="en">Customer Service Excellence</span></h3>
+          <p>Connect Marketing Services</p>
+        </div>
+        <div class="tile card">
+          <p class="kicker num">May 2023</p>
+          <h3 class="title"><span class="ar">موظف الشهر</span><span class="en">Employee of the Month</span></h3>
+          <p><span class="ar">مكتبة جرير</span><span class="en">Jarir Bookstore</span></p>
         </div>
       </div>
     </div>
