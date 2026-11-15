@@ -440,8 +440,7 @@
   .bt-shot { position: absolute; inset-inline: 36px; bottom: -40px; border-radius: 14px; overflow: hidden; box-shadow: 0 -10px 40px rgba(0,0,0,.5); transition: transform 600ms cubic-bezier(.22,1,.36,1); }
   .bt-shot img { display: block; width: 100%; height: auto; }
   .bt-kn:hover .bt-shot { transform: translateY(-14px); }
-  .bt-vid video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .bt-vid video::-webkit-media-controls, .bt-vid video::-webkit-media-controls-start-playback-button, .bt-vid video::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; }
+  .bt-vid .bt-loop { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
   .bt-ai .bt-title { font-size: clamp(30px, 3.2vw, 44px); }
   .bt-text { unicode-bidi: plaintext; }
   .bt-over { position: absolute; inset: auto 0 0 0; padding: 60px 22px 22px; display: grid; gap: 4px; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
@@ -538,7 +537,7 @@
           <span class="bt-shot" aria-hidden="true"><img src="work/kn-desktop.jpg" alt="" loading="lazy"></span>
         </a>
         <a class="bt bt-vid" href="#videos">
-          <video src="work/tamara.mp4" poster="work/tamara.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+          <img class="bt-loop" src="work/tamara-loop.webp" alt="" aria-hidden="true">
           <span class="bt-over"><span class="bt-title sm"><span class="ar">مقاطع قصيرة</span><span class="en">Short‑form videos</span></span><span class="bt-more"><span class="ar">شوف المقاطع</span><span class="en">Watch all 4</span></span></span>
         </a>
         <a class="bt bt-ipro" href="#experience">
@@ -1054,19 +1053,6 @@
       });
     }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
     els.forEach(function (el) { io.observe(el); });
-  })();
-</script>
-<script>
-  (function () {
-    // Keep the bento video playing silently; Safari needs muted set as a property before play()
-    var v = document.querySelector('.bt-vid video');
-    if (!v) return;
-    v.muted = true; v.defaultMuted = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
-    function tryPlay() { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) tryPlay(); else v.pause(); }); }, { threshold: 0.2 }).observe(v);
-    } else { tryPlay(); }
-    ['touchstart', 'scroll', 'click'].forEach(function (ev) { window.addEventListener(ev, function once() { tryPlay(); window.removeEventListener(ev, once); }, { passive: true }); });
   })();
 </script>
 </body>
