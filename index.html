@@ -21,8 +21,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff">
 
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -493,14 +492,7 @@
   }
   @media (prefers-reduced-motion: reduce) { .shine { animation: none; } .bt, .bt-shot { transition: none; } }
 
-  /* Dark mode: follows the device, or the moon button in the nav */
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #000000; --ink: #f5f5f7; --gray: #a1a1a6; --tile: #1c1c1e; --line: #38383a;
-      --black: #161617; --tile-dark: #232325; --tile-dark-hover: #2c2c2e; --line-dark: #3a3a3c;
-      --nav-bg: rgba(22,22,23,.8); color-scheme: dark;
-    }
-  }
+  /* Dark mode: off by default; the moon button in the nav turns it on */
   :root[data-theme="dark"] {
     --bg: #000000; --ink: #f5f5f7; --gray: #a1a1a6; --tile: #1c1c1e; --line: #38383a;
     --black: #161617; --tile-dark: #232325; --tile-dark-hover: #2c2c2e; --line-dark: #3a3a3c;
@@ -518,10 +510,6 @@
   .theme .sun { display: none; }
   :root[data-theme="dark"] .theme .sun { display: block; }
   :root[data-theme="dark"] .theme .moon { display: none; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .theme .sun { display: block; }
-    :root:not([data-theme="light"]) .theme .moon { display: none; }
-  }
   body, .nav, .tile, .chapters, .flyout { transition: background-color 300ms ease, color 300ms ease; }
 
   /* Khal Nelab project bento */
@@ -1130,7 +1118,7 @@
     var root = document.documentElement;
     document.getElementById('theme-toggle').addEventListener('click', function () {
       var r = document.documentElement;
-      var cur = r.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var cur = r.getAttribute('data-theme') || 'light';
       var next = cur === 'dark' ? 'light' : 'dark';
       r.setAttribute('data-theme', next);
       try { localStorage.setItem('pf-theme', next); } catch (e) {}
